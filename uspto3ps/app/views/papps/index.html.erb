@@ -1,0 +1,57 @@
+<h1>Listing papps</h1>
+
+<table>
+  <tr>
+    <th>Appno</th>
+    <th>Firstinventorname</th>
+    <th>Assignee</th>
+    <th>Filingdate</th>
+    <th>Apptype</th>
+    <th>Examinername</th>
+    <th>Artunit</th>
+    <th>Confnumber</th>
+    <th>Classsub</th>
+    <th>Published</th>
+    <th>Pubdate</th>
+    <th>Firstoadate</th>
+    <th>Noadate</th>
+    <th>Issuedate</th>
+    <th>Currstatus</th>
+    <th>Currstatusdate</th>
+    <th>Pubno</th>
+    <th>Pubrequest</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @papps.each do |papp| %>
+  <tr>
+    <td><%= papp.appno %></td>
+    <td><%= papp.firstinventorname %></td>
+    <td><%= papp.assignee %></td>
+    <td><%= papp.filingdate %></td>
+    <td><%= papp.apptype %></td>
+    <td><%= papp.examinername %></td>
+    <td><%= papp.artunit %></td>
+    <td><%= papp.confnumber %></td>
+    <td><%= papp.classsub %></td>
+    <td><%= papp.published %></td>
+    <td><%= papp.pubdate %></td>
+    <td><%= papp.firstoadate %></td>
+    <td><%= papp.noadate %></td>
+    <td><%= papp.issuedate %></td>
+    <td><%= papp.currstatus %></td>
+    <td><%= papp.currstatusdate %></td>
+    <td><%= papp.pubno %></td>
+    <td><%= papp.pubrequest %></td>
+    <td><%= link_to 'Show', papp %></td>
+    <td><%= link_to 'Edit', edit_papp_path(papp) %></td>
+    <td><%= link_to 'Destroy', papp, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Papp', new_papp_path %>

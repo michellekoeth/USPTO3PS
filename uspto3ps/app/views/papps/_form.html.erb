@@ -1,0 +1,89 @@
+<%= form_for(@papp) do |f| %>
+  <% if @papp.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@papp.errors.count, "error") %> prohibited this papp from being saved:</h2>
+
+      <ul>
+      <% @papp.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :appno %><br />
+    <%= f.text_field :appno %>
+  </div>
+  <div class="field">
+    <%= f.label :firstinventorname %><br />
+    <%= f.text_field :firstinventorname %>
+  </div>
+  <div class="field">
+    <%= f.label :assignee %><br />
+    <%= f.text_field :assignee %>
+  </div>
+  <div class="field">
+    <%= f.label :filingdate %><br />
+    <%= f.date_select :filingdate %>
+  </div>
+  <div class="field">
+    <%= f.label :apptype %><br />
+    <%= f.text_field :apptype %>
+  </div>
+  <div class="field">
+    <%= f.label :examinername %><br />
+    <%= f.text_field :examinername %>
+  </div>
+  <div class="field">
+    <%= f.label :artunit %><br />
+    <%= f.text_field :artunit %>
+  </div>
+  <div class="field">
+    <%= f.label :confnumber %><br />
+    <%= f.text_field :confnumber %>
+  </div>
+  <div class="field">
+    <%= f.label :classsub %><br />
+    <%= f.text_field :classsub %>
+  </div>
+  <div class="field">
+    <%= f.label :published %><br />
+    <%= f.check_box :published %>
+  </div>
+  <div class="field">
+    <%= f.label :pubdate %><br />
+    <%= f.date_select :pubdate %>
+  </div>
+  <div class="field">
+    <%= f.label :firstoadate %><br />
+    <%= f.date_select :firstoadate %>
+  </div>
+  <div class="field">
+    <%= f.label :noadate %><br />
+    <%= f.date_select :noadate %>
+  </div>
+  <div class="field">
+    <%= f.label :issuedate %><br />
+    <%= f.date_select :issuedate %>
+  </div>
+  <div class="field">
+    <%= f.label :currstatus %><br />
+    <%= f.text_field :currstatus %>
+  </div>
+  <div class="field">
+    <%= f.label :currstatusdate %><br />
+    <%= f.date_select :currstatusdate %>
+  </div>
+  <div class="field">
+    <%= f.label :pubno %><br />
+    <%= f.text_field :pubno %>
+  </div>
+  <div class="field">
+    <%= f.label :pubrequest %><br />
+    <%= f.check_box :pubrequest %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

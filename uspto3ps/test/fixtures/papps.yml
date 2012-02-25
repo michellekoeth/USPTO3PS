@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  appno: MyString
+  firstinventorname: MyString
+  assignee: MyString
+  filingdate: 2012-02-25
+  apptype: MyString
+  examinername: MyString
+  artunit: 
+  confnumber: 
+  classsub: MyString
+  published: false
+  pubdate: 2012-02-25
+  firstoadate: 2012-02-25
+  noadate: 2012-02-25
+  issuedate: 2012-02-25
+  currstatus: MyString
+  currstatusdate: 2012-02-25
+  pubno: MyString
+  pubrequest: false
+
+two:
+  appno: MyString
+  firstinventorname: MyString
+  assignee: MyString
+  filingdate: 2012-02-25
+  apptype: MyString
+  examinername: MyString
+  artunit: 
+  confnumber: 
+  classsub: MyString
+  published: false
+  pubdate: 2012-02-25
+  firstoadate: 2012-02-25
+  noadate: 2012-02-25
+  issuedate: 2012-02-25
+  currstatus: MyString
+  currstatusdate: 2012-02-25
+  pubno: MyString
+  pubrequest: false
