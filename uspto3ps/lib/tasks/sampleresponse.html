@@ -1,0 +1,1472 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+<portal-internal:adminNavHelper/>
+
+
+ 
+<html>
+
+
+
+<head>
+  <link rel="stylesheet" type="text/css" href='/internetPortal/themes/html/internetPortal/internetPortal.css' />
+  <title>United States Patent &amp; Trademark Office</title> 
+  <script language="javascript" src='/internetPortal/themes/html/internetPortal/menuFunctions.js'></script>
+
+<SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript">
+<!--
+//This javascript is for PROD_External
+function get_cookie(name)
+{
+  var results = document.cookie.match ( name + '=(.*?)(;|$)' );
+
+  if ( results )
+    return ( unescape ( results[1] ) );
+  else
+    return null;
+}
+
+var ez_Menu = new Array();
+if (get_cookie('LtpaToken'))
+  {	
+     	if (get_cookie('EFSJSESSIONID'))
+     	   {	
+		ez_Menu[0]= new Array("Portal Home^/external/portal/!ut/p/c5/04_SB8K8xLLM9MSSzPy8xBz9CP0os3hff1NDc1NLYwN3SzcDA08PwyD_YF8zINcYKB-JW97AiCLdBgR0h4Nci992vPIGEHkDHMDRQN_PIz83Vb8gNzTCIDMgHQCGKKj-/dl3/d3/L2dJQSEvUUt3QS9ZQnZ3LzZfTU81MTc1OTMwRzlGMDBJSDFST1NNNjMwMDE!/", "!|", "Patents^/external/portal/!ut/p/c5/04_SB8K8xLLM9MSSzPy8xBz9CP0os3hff1NDc1NLYwN3SzcDA08PwyD_YF8zINcYKB-JW97AiCLdBgR0h4Nci992vPIGEHkDHMDRQN_PIz83Vb8gNzTCIDMgHQCGKKj-/dl3/d3/L2dJQSEvUUt3QS9ZQnZ3LzZfTU81MTc1OTMwRzlGMDBJSDFST1NNNjMwMDE!/^1", "!|", "Trademarks^http://tmportal.uspto.gov/external/portal/home^2", "!|", "Other^/external/portal/!ut/p/c5/04_SB8K8xLLM9MSSzPy8xBz9CP0os3hff1NDc1NLYwN3SzcDA08PwyD_YF8zINcYKB-JW97AiCLdBgR0h4Nci992vPIGEHkDHMDRQN_PIz83Vb8gNzTCIDMgHQCGKKj-/dl3/d3/L2dJQSEvUUt3QS9ZQnZ3LzZfTU81MTc1OTMwRzlGMDBJSDFST1NNNjMwMDE!/^3", "!|", "Sign-Off Authenticated Session^https://efs.uspto.gov/efile/myportal/Logout");
+		ez_Menu[1]= new Array("eFile (Unregistered)^https://efs.uspto.gov/efile/portal/efs-unregistered", "eFile (Registered)^https://efs.uspto.gov/efile/myportal/efs-registered", "Public Pair^http://portal.uspto.gov/external/portal/pair", "Private Pair^https://ppair.uspto.gov/epatent/myportal/privatepair", "Other^http://www.uspto.gov/ebc/index.html");
+		ez_Menu[2]= new Array("Document Retrieval^http://tmportal.uspto.gov/external/portal/tow", "U S Registration Certificates^http://tmportal.uspto.gov/external/portal/registrationcert", "Other^http://www.uspto.gov/ebc/indexebc.html");
+		ez_Menu[3]= new Array("Employee Locator^http://portal.uspto.gov/external/portal/emlocator", "Digital Certificate Management^https://sas.uspto.gov/ptosas/index.html");
+         }
+      else
+     	   { 
+      	ez_Menu[0]= new Array("Portal Home^/external/portal/!ut/p/c5/04_SB8K8xLLM9MSSzPy8xBz9CP0os3hff1NDc1NLYwN3SzcDA08PwyD_YF8zINcYKB-JW97AiCLdBgR0h4Nci992vPIGEHkDHMDRQN_PIz83Vb8gNzTCIDMgHQCGKKj-/dl3/d3/L2dJQSEvUUt3QS9ZQnZ3LzZfTU81MTc1OTMwRzlGMDBJSDFST1NNNjMwMDE!/", "!|", "Patents^/external/portal/!ut/p/c5/04_SB8K8xLLM9MSSzPy8xBz9CP0os3hff1NDc1NLYwN3SzcDA08PwyD_YF8zINcYKB-JW97AiCLdBgR0h4Nci992vPIGEHkDHMDRQN_PIz83Vb8gNzTCIDMgHQCGKKj-/dl3/d3/L2dJQSEvUUt3QS9ZQnZ3LzZfTU81MTc1OTMwRzlGMDBJSDFST1NNNjMwMDE!/^1", "!|", "Trademarks^http://tmportal.uspto.gov/external/portal/home^2", "!|", "Other^/external/portal/!ut/p/c5/04_SB8K8xLLM9MSSzPy8xBz9CP0os3hff1NDc1NLYwN3SzcDA08PwyD_YF8zINcYKB-JW97AiCLdBgR0h4Nci992vPIGEHkDHMDRQN_PIz83Vb8gNzTCIDMgHQCGKKj-/dl3/d3/L2dJQSEvUUt3QS9ZQnZ3LzZfTU81MTc1OTMwRzlGMDBJSDFST1NNNjMwMDE!/^3", "!|", "Sign-Off Authenticated Session^https://ppair.uspto.gov/epatent/myportal/Logout");
+		ez_Menu[1]= new Array("eFile (Unregistered)^https://efs.uspto.gov/efile/portal/efs-unregistered", "eFile (Registered)^https://efs.uspto.gov/efile/myportal/efs-registered", "Public Pair^http://portal.uspto.gov/external/portal/pair", "Private Pair^https://ppair.uspto.gov/epatent/myportal/privatepair", "Other^http://www.uspto.gov/ebc/index.html");
+		ez_Menu[2]= new Array("Document Retrieval^http://tmportal.uspto.gov/external/portal/tow", "U S Registration Certificates^http://tmportal.uspto.gov/external/portal/registrationcert", "Other^http://www.uspto.gov/ebc/indexebc.html");
+		ez_Menu[3]= new Array("Employee Locator^http://portal.uspto.gov/external/portal/emlocator", "Digital Certificate Management^https://sas.uspto.gov/ptosas/index.html");
+     	   }
+ }  
+else
+ { 
+     	ez_Menu[0]= new Array("Portal Home^/external/portal/!ut/p/c5/04_SB8K8xLLM9MSSzPy8xBz9CP0os3hff1NDc1NLYwN3SzcDA08PwyD_YF8zINcYKB-JW97AiCLdBgR0h4Nci992vPIGEHkDHMDRQN_PIz83Vb8gNzTCIDMgHQCGKKj-/dl3/d3/L2dJQSEvUUt3QS9ZQnZ3LzZfTU81MTc1OTMwRzlGMDBJSDFST1NNNjMwMDE!/", "!|", "Patents^/external/portal/!ut/p/c5/04_SB8K8xLLM9MSSzPy8xBz9CP0os3hff1NDc1NLYwN3SzcDA08PwyD_YF8zINcYKB-JW97AiCLdBgR0h4Nci992vPIGEHkDHMDRQN_PIz83Vb8gNzTCIDMgHQCGKKj-/dl3/d3/L2dJQSEvUUt3QS9ZQnZ3LzZfTU81MTc1OTMwRzlGMDBJSDFST1NNNjMwMDE!/^1", "!|", "Trademarks^http://tmportal.uspto.gov/external/portal/home^2", "!|", "Other^/external/portal/!ut/p/c5/04_SB8K8xLLM9MSSzPy8xBz9CP0os3hff1NDc1NLYwN3SzcDA08PwyD_YF8zINcYKB-JW97AiCLdBgR0h4Nci992vPIGEHkDHMDRQN_PIz83Vb8gNzTCIDMgHQCGKKj-/dl3/d3/L2dJQSEvUUt3QS9ZQnZ3LzZfTU81MTc1OTMwRzlGMDBJSDFST1NNNjMwMDE!/^3");
+	ez_Menu[1]= new Array("eFile (Unregistered)^https://efs.uspto.gov/efile/portal/efs-unregistered", "eFile (Registered)^https://efs.uspto.gov/efile/myportal/efs-registered", "Public Pair^http://portal.uspto.gov/external/portal/pair", "Private Pair^https://ppair.uspto.gov/epatent/myportal/privatepair", "Other^http://www.uspto.gov/ebc/index.html");
+	ez_Menu[2]= new Array("Document Retrieval^http://tmportal.uspto.gov/external/portal/tow", "U S Registration Certificates^http://tmportal.uspto.gov/external/portal/registrationcert", "Other^http://www.uspto.gov/ebc/indexebc.html");
+	ez_Menu[3]= new Array("Employee Locator^http://portal.uspto.gov/external/portal/emlocator", "Digital Certificate Management^https://sas.uspto.gov/ptosas/index.html");
+ }
+
+var ez_fontInfo = new Array("Arial,9pt,#003399,#CC0033", "Arial,9pt,#003399,#CC0033");
+var ez_tfontInfo = new Array("Arial,9pt,#000000", "Arial,9pt,#000000");
+var ez_colInfo = new Array("#F0F0F0,#F0F0F0,#F0F0F0,#F0F0F0","#D6D6D6,#EEEEEE,#FFFFFF,#111111");
+var ez_borSize = new Array("0,0", "0,0");
+var ez_txtPad = new Array("2", "3");
+var ez_arrow = new Array(",,10", "helpfiles/images/arrow.gif,helpfiles/images/arrowhi.gif,10");
+var ez_root = new Array("0", "1");
+var ez_isBar = new Array(true, false, false);
+var ez_xover = new Array("0", "0");
+var ez_yover = new Array("0", "0");
+var ez_bg = new Array("", "");
+var ez_pname = new Array('Main', 'Links', 'Search');
+var ez_pwidth = new Array(0, 0, 0);
+var ez_3D = new Array("", "");
+var ez_sfx = new Array("", "");
+var ez_animate = new Array("", "");
+
+-->
+</script>
+
+</head><!-- Head --> 
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0"  onLoad="if ( document.forms['wpsPageGroupSelectionForm'] != null ) document.forms['wpsPageGroupSelectionForm'].reset();" >  
+<div id="main">
+    <div id="header">  
+  <div id="logo">
+    <a href="#skipnav"><img src='/internetPortal/themes/html/internetPortal/blank.gif' alt="Skip Navigation" /></a> 
+    <a href="http://www.uspto.gov"><img src='/internetPortal/themes/html/internetPortal/uspto_seal_50.gif' alt="USPTO Seal" /></a>
+  </div><!-- Logo -->
+  <strong>United States Patent and Trademark Office</strong><br />
+  <br />
+  <div class="primaryNav">
+    <a href="http://www.uspto.gov" title="USPTO Home">Home</a> | 
+    <a href="http://www.uspto.gov/siteindex.jsp" title="Site Index">Site Index</a> | 
+    <a href="http://www.uspto.gov/sitesearch.jsp" title="Search USPTO.gov">Search</a> | 
+    <a href="http://www.uspto.gov/main/faq/index.html" title="Frequently Asked Questions">FAQ</a> | 
+    <a href="http://www.uspto.gov/main/glossary/index.html" title="Glossary">Glossary</a> | 
+    <a href="http://www.uspto.gov/main/definitions.htm" title="Guides">Guides</a> | 
+    <a href="http://www.uspto.gov/about/contacts/index.jsp" title="Contacts">Contacts</a> | 
+    <a href="http://www.uspto.gov/ebc/indexebc.html" title="eBusiness">eBusiness</a> | 
+    <a href="http://www.uspto.gov/blog/ebiz/" title="eBiz Alerts">eBiz Alerts</a> | 
+    <a href="http://www.uspto.gov/news/index.jsp" title="News">News</a> | 
+    <a href="http://www.uspto.gov/about/contacts/callcenters.jsp" title="Help">Help</a>      
+  </div><!-- Primary Navigation -->
+</div><!-- Header -->
+     <div id="breadcrumb">
+       <script language="javascript" src='/internetPortal/themes/html/internetPortal/ezloader.js'></script>
+       <script language="javascript">menusGo()</script>
+       <script> showPermPanel('Main', 0, 67) </script>
+	<noscript>
+	   <table border="0" cellpadding="0" cellspacing="0">
+		<tr>
+		  <td valign="top"><a href="http://portal.uspto.gov/external/portal/home">Portal Home</a></td>
+		  <td valign="top">
+		      <ul>
+		          <a href="http://portal.uspto.gov/external/portal/home">Patents</a><br>
+		          <a href="https://efs.uspto.gov/efile/portal/efs-unregistered">eFile (Unregistered)</a><br>
+		          <a href="https://efs.uspto.gov/efile/myportal/efs-registered">eFile (Registered)</a><br>
+		          <a href="http://portal.uspto.gov/external/portal/pair">Public Pair</a><br>
+		          <a href="https://ppair.uspto.gov/epatent/myportal/privatepair">Private Pair</a><br>
+          		    <a href="http://www.uspto.gov/ebc/index.html">Other</a><br>
+		      </ul>
+		  </td>
+		  <td valign="top">
+		      <ul>
+		         <a href="http://tmportal.uspto.gov/external/portal/home">Trademarks</a><br>
+		         <a href="http://tmportal.uspto.gov/external/portal/tow">Document Retrieval</a><br>
+		         <a href="http://tmportal.uspto.gov/external/portal/registrationcert">US Registration Certificates</a><br>
+ 			   <a href="http://www.uspto.gov/ebc/indexebc.html">Other</a><br>
+		      </ul>
+		  </td>
+		  <td valign="top">
+		      <ul>
+		         <a href="http://portal.uspto.gov/external/portal/home">Other</a><br>
+		         <a href="http://portal.uspto.gov/external/portal/emlocator">Employee Locator</a><br>
+		         <a href="https://sas.uspto.gov/ptosas/index.html">Digital Certificate Management</a><br>
+		      </ul>
+		  </td>
+
+		</tr>
+	 </table>
+       </noscript>
+	   <br>
+    </div><!-- Breadcrumb --> 
+    <div id="content">
+	 
+ 
+ 
+ 
+ 
+ 
+<table border="0" width="100%" cellpadding="0" cellspacing="0" align="center"> 
+<tr><td width="100%" valign="top"> 
+ 
+ 
+ 
+ 
+ 
+<table border="0" width="100%" cellpadding="0" cellspacing="0" align="center"><tr height="100%"> 
+<td valign="top" width="200"> 
+ 
+ 
+ 
+ 
+ 
+<table border="0" width="100%" cellpadding="0" cellspacing="0" align="center"> 
+<tr><td width="100%" valign="top">
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+<a name="7_MO5175930G9F00IH1ROSM63046"></a>
+
+
+    
+
+<table border="0" width="100%" cellpadding="0" cellspacing="5">
+    <tr>
+	   <td>	   
+		  <table border="0" width="100%" height="100%" cellpadding="0" cellspacing="0" class="wpsPortletBody">		  
+			 <tr height="1">
+				<td colspan="3">
+				    <table border="0" height="22" width="100%" cellpadding="0" cellspacing="0">
+					   <tr>
+						  <td class="blueShadow" valign="top" align="right"><img alt="" border="0" src='/internetPortal/skins/html/Corner_Blue/Corner_rtl.gif'></td>
+						  <td class="blueShadow" width="1" ><img alt="" border="0" width="1" height="1" src='/internetPortal/skins/html/Corner_Blue/dot.gif'/></td>
+						  <td class="blueShadow" width="100%" nowrap align="left" valign="middle">&nbsp;&nbsp;
+							 Patent eBusiness
+						  </td>
+
+						 
+							 
+								<td class="blueShadow"><a href='/external/portal/!ut/p/c5/04_SB8K8xLLM9MSSzPy8xBz9CP0os3hff1NDc1NLYwN3SzcDA08PwyD_YF8zINcYKB-JW97AiCLdBgR0h4Nci992vPIGEHkDHMDRQN_PIz83Vb8gNzTCIDMgHQCGKKj-/dl3/d3/L0lDU0NsQSEhL3dHa0FKTk1BLzRCRWo5NEFnLzdfTU81MTc1OTMwRzlGMDBJSDFST1NNNjMwNDYvbWluaW1pemVk/'><img border="0" valign="middle" align="right" class="wpsPortletTitleIcon" src='/internetPortal/skins/html/Corner_Blue/title_minimize.gif' alt='Minimize'	title='Minimize'></a></td>
+							 
+							 
+								<td class="blueShadow"><a href='/external/portal/!ut/p/c5/04_SB8K8xLLM9MSSzPy8xBz9CP0os3hff1NDc1NLYwN3SzcDA08PwyD_YF8zINcYKB-JW97AiCLdBgR0h4Nci992vPIGEHkDHMDRQN_PIz83Vb8gNzTCIDMgHQCGKKj-/dl3/d3/L0lDU0tLVUEhL3dPa0FKRk5FRENBIS80QkVqOTRBZy83X01PNTE3NTkzMEc5RjAwSUgxUk9TTTYzMDQ2L21heGltaXplZA!!/'><img border="0" valign="middle" align="right" class="wpsPortletTitleIcon" src='/internetPortal/skins/html/Corner_Blue/title_maximize.gif' alt='Maximize'	title='Maximize'></a></td>
+							 
+						 
+						 
+						 
+						  <td class="blueShadow" width="1" ><img alt="" border="0" width="1" height="1" src='/internetPortal/skins/html/Corner_Blue/dot.gif'></td>
+						  <td class="blueShadow" valign="top" align="right"><img alt="" border="0" src='/internetPortal/skins/html/Corner_Blue/Corner.gif'></td>
+					   </tr>
+				    </table>				    	  
+				</td>
+			 </tr>
+						  
+			 
+				<tr height="100%">
+				    <td bgcolor="#000000" width="1"><img alt="" border="0" width="1" height="1" src='/internetPortal/skins/html/Corner_Blue/dot.gif'></td>
+				    <td width="100%" height="100%" valign="top">
+					   <table border="0" width="100%" cellpadding="0" cellspacing="0">
+						   <tr height="1">
+							  <td width="1" height="1"><img alt="" border="0" width="1" height="1" src='/internetPortal/skins/html/Corner_Blue/dot.gif'></td>
+						   </tr>
+				    	   </table>   
+					   <table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
+						  <tr>
+							 <td dir="ltr" height="100%" valign="top">
+								<!-- This JSP is for PROD -->
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+<script language="javascript">
+<!--
+  menu['electronicfiling']      = new Object;
+  menu['electronicfiling'].div  = "PatenteBusiness0";
+  menu['electronicfiling'].show = "<div id=\"PatenteBusiness0\"><a href=\"javascript:hideMenu('electronicfiling')\" ><img src=\'/internetPortal/themes/html/internetPortal/NavigationExpanded.gif\' alt=\"Click here to collapse this section\" title=\"Click here to collapse this section\" /><strong>Electronic Filing</strong></a><br/><div style='padding-left:10px;background-color:#D9D9D9;'><a href='https://efs.uspto.gov/efile/portal/efs-unregistered' target='_blank'>eFile (Unregistered)</a><br/><a href='https://efs.uspto.gov/efile/myportal/efs-registered' target='_blank'>eFile (Registered)</a><br/><a href='http://www.uspto.gov/patents/process/file/accelerated/index.jsp' target='_blank'>Accelerated Examination</a><br/><a href='http://www.uspto.gov/patents/process/file/efs/announce/index.jsp' target='_blank'>Announcements </a><br /><a href='http://www.uspto.gov/patents/process/file/efs/guidance/register.jsp' target='_blank'>Customer Numbers &amp; Digital Certificates (Registration)</a><br /><a href='http://www.uspto.gov/patents/process/file/efs/guidance/Form_fillable_pdfs_available.jsp' target='_blank'>eFiling Forms</a><br/><a href='http://www.uspto.gov/ebc/efs_faq.htm' target='_blank'>Frequently Asked Questions</a><br /><a href='http://www.uspto.gov/ebc/efs_help.html' target='_blank'>Help &amp; Tutorial </a><br /><a href='http://www.uspto.gov/patents/process/file/efs/guidance/New_legal_framework.jsp' target='_blank'>Legal Framework</a></div></div>";
+  menu['electronicfiling'].hide = "<div id=\"PatenteBusiness0\"><a href=\"javascript:showMenu('electronicfiling')\" ><img src=\'/internetPortal/themes/html/internetPortal/NavigationCollapsed.gif\' alt=\"Click here to expand this section\" title=\"Click here to expand this section\" />Electronic Filing</a></div>";
+      
+  menu['patentapplicationinformation']      = new Object;
+  menu['patentapplicationinformation'].div  = "PatenteBusiness1";
+  menu['patentapplicationinformation'].show = "<div id=\"PatenteBusiness1\"><a href=\"javascript:hideMenu('patentapplicationinformation')\" ><img src=\'/internetPortal/themes/html/internetPortal/NavigationExpanded.gif\' alt=\"Click here to collapse this section\" title=\"Click here to collapse this section\" /><strong>Patent Application Information (PAIR)</strong></a><br/><div style='padding-left:10px;background-color:#D9D9D9;'><a href='http://portal.uspto.gov/external/portal/pair' target='_blank'>Public PAIR (Unregistered)</a><br /><a href='https://ppair.uspto.gov/epatent/myportal/privatepair' target='_blank'>Private PAIR (Registered)</a><br/><a href='http://portal.uspto.gov/external/portal/gau' title='Associate Group Art Units with Class/Subclass codes' target='_blank'>GAU - Class/Subclass Search</a><br/><a href='http://www.uspto.gov/patents/process/search/public_pair/announce/index.jsp' target='_blank'>Announcements</a><br/><a href='http://www.uspto.gov/patents/process/file/efs/guidance/register.jsp' target='_blank'>Customer Numbers &amp; Digital Certificates (Registration)</a><br/><a href='http://www.uspto.gov/ebc/pair/pair_faq.html' target='_blank'>Frequently Asked Questions</a><br /><a href='http://www.uspto.gov/ebc/pair/help.html' target='_blank'>Public PAIR Help</a><br /><a href='http://www.uspto.gov/ebc/pair/cbt.htm' target='_blank'>Public PAIR Tutorial</a><br /><a href='http://www.uspto.gov/patents/process/status/private_pair/index.jsp' target='_blank'>Private PAIR Help & Tutorial</a></div></div>";
+  menu['patentapplicationinformation'].hide = "<div id=\"PatenteBusiness1\"><a href=\"javascript:showMenu('patentapplicationinformation')\" ><img src=\'/internetPortal/themes/html/internetPortal/NavigationCollapsed.gif\' alt=\"Click here to expand this section\" title=\"Click here to expand this section\" />Patent Application Information (PAIR)</a></div>";
+  
+  menu['patentownership']      = new Object;
+  menu['patentownership'].div  = "PatenteBusiness2";
+  menu['patentownership'].show = "<div id=\"PatenteBusiness2\"><a href=\"javascript:hideMenu('patentownership')\" ><img src=\'/internetPortal/themes/html/internetPortal/NavigationExpanded.gif\' alt=\"Click here to collapse this section\" title=\"Click here to collapse this section\" /><strong>Patent Ownership</strong></a><br /><div style='padding-left:10px;background-color:#D9D9D9;'><a href='http://epas.uspto.gov' target='_blank'>Change Ownership</a><br /><a href='http://assignments.uspto.gov/assignments/q?db=pat' target='_blank'>Search Patent Assignments</a><br /><a href='http://www.uspto.gov/ebc/help_assignments_p.htm' target='_blank'>Assignment Help</a></div></div>";
+  menu['patentownership'].hide = "<div id=\"PatenteBusiness2\"><a href=\"javascript:showMenu('patentownership')\" ><img src=\'/internetPortal/themes/html/internetPortal/NavigationCollapsed.gif\' alt=\"Click here to expand this section\" title=\"Click here to expand this section\" />Patent Ownership</a></div>";
+
+  menu['fees']      = new Object;
+  menu['fees'].div  = "PatenteBusiness3";
+  menu['fees'].show = "<div id=\"PatenteBusiness3\"><a href=\"javascript:hideMenu('fees')\" ><img src=\'/internetPortal/themes/html/internetPortal/NavigationExpanded.gif\' alt=\"Click here to collapse this section\" title=\"Click here to collapse this section\" /><strong>Fees</strong></a><br /><div style='padding-left:10px;background-color:#D9D9D9;'><a href='http://www.uspto.gov/main/howtofees.htm' target='_blank'>How to Pay Fees</a><br /><a href='https://ramps.uspto.gov/eram/' target='_blank'>Pay Online (RAM)</a></div></div>";
+  menu['fees'].hide = "<div id=\"PatenteBusiness3\"><a href=\"javascript:showMenu('fees')\" ><img src=\'/internetPortal/themes/html/internetPortal/NavigationCollapsed.gif\' alt=\"Click here to expand this section\" title=\"Click here to expand this section\" />Fees</a></div>";
+
+  menu['supplementalresourcessupport']      = new Object;
+  menu['supplementalresourcessupport'].div  = "PatenteBusiness4";
+  menu['supplementalresourcessupport'].show = "<div id=\"PatenteBusiness4\"><a href=\"javascript:hideMenu('supplementalresourcessupport')\" ><img src=\'/internetPortal/themes/html/internetPortal/NavigationExpanded.gif\' alt=\"Click here to collapse this section\" title=\"Click here to collapse this section\" /><strong>Supplemental Resources &amp; Support</strong></a><br/><div style='padding-left:10px;background-color:#D9D9D9;'><a href='http://www.uspto.gov/faq/plugins/pdf.jsp' title='PDF viewer required to view documents' target='_blank'>Download PDF Viewer</a><br/><a href='http://www.uspto.gov/faq/plugins/tiff.jsp' title='TIFF viewer required to view patent images' target='_blank'>Download TIFF Image Viewer</a><br/><a href='http://www.uspto.gov/main/glossary/index.html' target='_blank'>Glossary</a><br/><a href='http://www.uspto.gov/faq/other.jsp' target='_blank'>International Patent Offices</a><br/><a href='http://www.uspto.gov/patents/ebc/index.jsp' target='_blank'>Patent eBusiness Support/Help</a><br /><a href='http://www.uspto.gov/blog/ebiz/' target='_blank'>System Alerts</a></div></div>";
+  menu['supplementalresourcessupport'].hide = "<div id=\"PatenteBusiness4\"><a href=\"javascript:showMenu('supplementalresourcessupport')\" ><img src=\'/internetPortal/themes/html/internetPortal/NavigationCollapsed.gif\' alt=\"Click here to expand this section\" title=\"Click here to expand this section\" />Supplemental Resources &amp; Support</a></div>";
+  
+  menu['codesrulesmanuals']      = new Object;
+  menu['codesrulesmanuals'].div  = "PatentInformation0";
+  menu['codesrulesmanuals'].show = "<div id=\"PatentInformation0\"><a href=\"javascript:hideMenu('codesrulesmanuals')\" ><img src=\'/internetPortal/themes/html/internetPortal/NavigationExpanded.gif\' alt=\"Click here to collapse this section\" title=\"Click here to collapse this section\" /><strong>Codes, Rules & Manuals</strong></a><br /><div style='padding-left:10px;background-color:#D9D9D9;'><a href='http://www.uspto.gov/web/patents/classification' target='_blank'>Manual of Patent Classification</a><br/><a href='http://www.uspto.gov/web/offices/pac/mpep/mpep.htm' target='_blank'>Manual of Examining Procedure</a></div></div>";
+  menu['codesrulesmanuals'].hide = "<div id=\"PatentInformation0\"><a href=\"javascript:showMenu('codesrulesmanuals')\" ><img src=\'/internetPortal/themes/html/internetPortal/NavigationCollapsed.gif\' alt=\"Click here to expand this section\" title=\"Click here to expand this section\" />Codes, Rules & Manuals</a></div>";
+  
+  menu['employeeofficedirectories']      = new Object;
+  menu['employeeofficedirectories'].div  = "PatentInformation1";
+  menu['employeeofficedirectories'].show = "<div id=\"PatentInformation1\"><a href=\"javascript:hideMenu('employeeofficedirectories')\" ><img src=\'/internetPortal/themes/html/internetPortal/NavigationExpanded.gif\' alt=\"Click here to collapse this section\" title=\"Click here to collapse this section\" /><strong>Employee & Office Directories</strong></a><br /><div style='padding-left:10px;background-color:#D9D9D9;'><a href='http://portal.uspto.gov/external/portal/emlocator' target='_blank'>Employee Locator</a><br /><a href='http://www.uspto.gov/about/contacts/organizationalcodes.jsp' target='_blank'>Valid Location Codes</a><br/><a href='http://www.uspto.gov/about/contacts/phone_directory/index.jsp' target='_blank'>Telephone Directory</a></div></div>";
+  menu['employeeofficedirectories'].hide = "<div id=\"PatentInformation1\"><a href=\"javascript:showMenu('employeeofficedirectories')\" ><img src=\'/internetPortal/themes/html/internetPortal/NavigationCollapsed.gif\' alt=\"Click here to expand this section\" title=\"Click here to expand this section\" />Employee & Office Directories</a></div>";
+  
+  menu['resourcespublicnotices']      = new Object;
+  menu['resourcespublicnotices'].div  = "PatentInformation2";
+  menu['resourcespublicnotices'].show = "<div id=\"PatentInformation2\"><a href=\"javascript:hideMenu('resourcespublicnotices')\" ><img src=\'/internetPortal/themes/html/internetPortal/NavigationExpanded.gif\' alt=\"Click here to collapse this section\" title=\"Click here to collapse this section\" /><strong>Resources & Public Notices</strong></a><br /><div style='padding-left:10px;background-color:#D9D9D9;'><a href='http://www.uspto.gov/inventors/index.jsp' target='_blank'>Applicant Resources</a><br /><a href='http://des.uspto.gov/OEDCI' target='_blank'>Locate Registered Patent Attorney/Agent</a><br /><a href='http://www.uspto.gov/news/index.jsp' target='_blank'>News, Federal Register &amp; OG Notices</a><br/><a href='http://www.uspto.gov/products/library/ptdl/index.jsp' target='_blank'>PTDL Program</a></div></div>";
+  menu['resourcespublicnotices'].hide = "<div id=\"PatentInformation2\"><a href=\"javascript:showMenu('resourcespublicnotices')\" ><img src=\'/internetPortal/themes/html/internetPortal/NavigationCollapsed.gif\' alt=\"Click here to expand this section\" title=\"Click here to expand this section\" />Resources & Public Notices</a></div>";
+  
+  menu['searchpatents']      = new Object;
+  menu['searchpatents'].div  = "PatentSearch0";
+  menu['searchpatents'].show = "<div id=\"PatentSearch0\"><a href=\"javascript:hideMenu('searchpatents')\"><img src=\'/internetPortal/themes/html/internetPortal/NavigationExpanded.gif\' alt=\"Click here to collapse this section\" title=\"Click here to collapse this section\"/><strong>Search Patents &amp; Applications</strong></a><br/><div style='padding-left:10px;background-color:#D9D9D9;'><a href='http://patft.uspto.gov/' target='_blank'>Search Full Text and Images</a><br/><a href='http://www.uspto.gov/patft/help/images.htm' target='_blank'>How to View Patent Images</a><br/><a href='http://www.uspto.gov/faq/other.jsp' target='_blank'>Search International Patents</a><br/><a href='http://portal.uspto.gov/external/portal/gau' target='_blank'>Search Class/Subclass/GAU</a><br/><a href='http://www.uspto.gov/main/profiles/acadres.htm' target='_blank'>Search Resources &amp; Tips</a></div></div>";
+  menu['searchpatents'].hide = "<div id=\"PatentSearch0\"><a href=\"javascript:showMenu('searchpatents')\" ><img src=\'/internetPortal/themes/html/internetPortal/NavigationCollapsed.gif\' alt=\"Click here to expand this section\" title=\"Click here to expand this section\" />Search Patents &amp; Applications</a></div>";
+  
+  menu['searchbiological']      = new Object;
+  menu['searchbiological'].div  = "PatentSearch1";
+  menu['searchbiological'].show = "<div id=\"PatentSearch1\"><a href=\"javascript:hideMenu('searchbiological')\" ><img src=\'/internetPortal/themes/html/internetPortal/NavigationExpanded.gif\' alt=\"Click here to collapse this section\" title=\"Click here to collapse this section\" /><strong>Search Biological Sequences</strong></a><br/><div style='padding-left:10px;background-color:#D9D9D9;'><a href='http://www.uspto.gov/patents/resources/tools/index.jsp' target='_blank'>Software for Sequence Listings</a></div></div>";
+  menu['searchbiological'].hide = "<div id=\"PatentSearch1\"><a href=\"javascript:showMenu('searchbiological')\" ><img src=\'/internetPortal/themes/html/internetPortal/NavigationCollapsed.gif\' alt=\"Click here to expand this section\" title=\"Click here to expand this section\" />Search Biological Sequences</a></div>";
+  
+  menu['copiesproductsservices']      = new Object;
+  menu['copiesproductsservices'].div  = "PatentSearch2";
+  menu['copiesproductsservices'].show = "<div id=\"PatentSearch2\"><a href=\"javascript:hideMenu('copiesproductsservices')\" ><img src=\'/internetPortal/themes/html/internetPortal/NavigationExpanded.gif\' alt=\"Click here to collapse this section\" title=\"Click here to collapse this section\" /><strong>Copies, Products &amp; Services</strong></a><br/><div style='padding-left:10px;background-color:#D9D9D9;'><a href='http://ebiz1.uspto.gov/oems25p/index.html' target='_blank'>Order Copies &amp; Publications Online</a><br /><a href='http://www.uspto.gov/products/index.jsp' target='_blank'>Other Products &amp; Services</a></div></div>";
+  menu['copiesproductsservices'].hide = "<div id=\"PatentSearch2\"><a href=\"javascript:showMenu('copiesproductsservices')\" ><img src=\'/internetPortal/themes/html/internetPortal/NavigationCollapsed.gif\' alt=\"Click here to expand this section\" title=\"Click here to expand this section\" />Copies, Products &amp; Services</a></div>";
+-->
+</script>
+<div id="PatenteBusiness" class="leftNav">
+	    <script language="javascript">  
+	      document.write("<div id=\"PatenteBusiness0\"><a href=\"javascript:showMenu('electronicfiling')\"><img src=\'/internetPortal/themes/html/internetPortal/NavigationCollapsed.gif\' alt=\"Click here to expand this section\" title=\"Click here to expand this section\" />Electronic Filing</a></div>");
+	      document.write("<div id=\"PatenteBusiness1\"><a href=\"javascript:showMenu('patentapplicationinformation')\"><img src=\'/internetPortal/themes/html/internetPortal/NavigationCollapsed.gif\' alt=\"Click here to expand this section\" title=\"Click here to expand this section\" />Patent Application Information (PAIR)</a></div>");
+	      document.write("<div id=\"PatenteBusiness2\"><a href=\"javascript:showMenu('patentownership')\"><img src=\'/internetPortal/themes/html/internetPortal/NavigationCollapsed.gif\' alt=\"Click here to expand this section\" title=\"Click here to expand this section\" />Patent Ownership</a></div>");
+	      document.write("<div id=\"PatenteBusiness3\"><a href=\"javascript:showMenu('fees')\"><img src=\'/internetPortal/themes/html/internetPortal/NavigationCollapsed.gif\' alt=\"Click here to expand this section\" title=\"Click here to expand this section\" />Fees</a></div>");
+	      document.write("<div id=\"PatenteBusiness4\"><a href=\"javascript:showMenu('supplementalresourcessupport')\"><img src=\'/internetPortal/themes/html/internetPortal/NavigationCollapsed.gif\' alt=\"Click here to expand this section\" title=\"Click here to expand this section\" />Supplemental Resources & Support</a></div>");
+	    </script>
+	    <noscript>
+	        <div id="PatenteBusiness0"><a><strong>Electronic Filing</strong></a><br/>
+	            <div style='padding-left:10px;background-color:#D9D9D9;'><a href='https://efs.uspto.gov/efile/portal/efs-unregistered' target='_blank'>eFile (Unregistered)</a><br /><a href='https://efs.uspto.gov/efile/myportal/efs-registered' target='_blank'>eFile (Registered)</a><br /><a href='http://www.uspto.gov/patents/process/file/accelerated/index.jsp' target='_blank'>Accelerated Examination</a><br/><a href='http://www.uspto.gov/patents/process/file/efs/announce/index.jsp' target='_blank'>Announcements</a><br /><a href='http://www.uspto.gov/patents/process/file/efs/guidance/register.jsp' target='_blank'>Customer Numbers &amp; Digital Certificates (Registration)</a><br/>
+		  	       <a href='http://www.uspto.gov/patents/process/file/efs/guidance/Form_fillable_pdfs_available.jsp' target='_blank'>eFiling Forms</a><br /><a href='http://www.uspto.gov/ebc/efs_faq.htm' target='_blank'>Frequently Asked Questions</a><br /><a href='http://www.uspto.gov/patents/process/file/efs/index.jsp' target='_blank'>Help &amp; Tutorial </a><br/><a href='http://www.uspto.gov/patents/process/file/efs/guidance/New_legal_framework.jsp' target='_blank'>Legal Framework</a>
+		        </div>
+		    </div>
+	        <div id="PatenteBusiness1"><a><strong>Patent Application Information (PAIR)</strong></a><br/>
+	            <div style='padding-left:10px;background-color:#D9D9D9;'><a href='http://portal.uspto.gov/external/portal/pair' target='_blank'>Public PAIR (Unregistered)</a><br /><a href='https://ppair.uspto.gov/epatent/myportal/privatepair' target='_blank'>Private PAIR (Registered)</a><br /><a href='http://portal.uspto.gov/external/portal/gau' title="Associate Group Art Units with Class/Subclass codes" target='_blank'>GAU - Class/Subclass Search</a><br /><a href='http://www.uspto.gov/patents/process/search/public_pair/announce/index.jsp' target='_blank'>Announcements</a><br /><a href='http://www.uspto.gov/patents/process/file/efs/guidance/register.jsp' target='_blank'>Customer Numbers &amp; Digital Certificates (Registration)</a><br/><a href='http://www.uspto.gov/ebc/pair/pair_faq.html' target='_blank'>Frequently Asked Questions</a><br /><a href='http://www.uspto.gov/ebc/pair/help.html' target='_blank'>Public PAIR Help</a><br /><a href='http://www.uspto.gov/ebc/pair/cbt.htm' target='_blank'>Public PAIR Tutorial</a><br /><a href='http://www.uspto.gov/patents/process/status/private_pair/index.jsp' target='_blank'>Private PAIR Help &amp; Tutorial</a></div>
+	        </div>
+	        <div id="PatenteBusiness2"><a><strong>Patent Ownership</strong></a><br/>
+	            <div style='padding-left:10px;background-color:#D9D9D9;'><a href='http://epas.uspto.gov' target='_blank'>Change Ownership</a><br /><a href='http://assignments.uspto.gov/assignments/q?db=pat' target='_blank'>Search Patent Assignments</a><br /><a href='http://www.uspto.gov/ebc/help_assignments_p.htm' target='_blank'>Assignment Help</a></div>
+	        </div>
+	        <div id="PatenteBusiness3"><a><strong>Fees</strong></a><br/>
+	            <div style='padding-left:10px;background-color:#D9D9D9;'><a href='http://www.uspto.gov/main/howtofees.htm' target='_blank'>How to Pay Fees</a><br /><a href='https://ramps.uspto.gov/eram/' target='_blank'>Pay Online (RAM)</a></div>
+	        </div>
+	        <div id="PatenteBusiness4"><a><strong>Supplemental Resources &amp; Support</strong></a><br/>
+	            <div style='padding-left:10px;background-color:#D9D9D9;'><a href='http://www.uspto.gov/faq/plugins/pdf.jsp' title='PDF viewer required to view documents' target='_blank'>Download PDF Viewer</a><br /><a href='http://www.uspto.gov/faq/plugins/tiff.jsp' title='TIFF viewer required to view patent images' target='_blank'>Download TIFF Image Viewer</a><br /><a href='http://www.uspto.gov/main/glossary/index.html' target='_blank'>Glossary</a><br /><a href='http://www.uspto.gov/faq/other.jsp' target='_blank'>International Patent Offices</a><br /><a href='http://www.uspto.gov/patents/ebc/index.jsp' target='_blank'>Patent eBusiness Support/Help</a><br /><a href='http://www.uspto.gov/blog/ebiz/' target='_blank'>System Alerts</a></div>
+	        </div>
+        </noscript>
+</div><br />
+<div class="blueShadow">Patent Information</div>
+<div id="PatentInformation" class="leftNav">
+	   <div><a href="http://www.uspto.gov/patents/index.jsp" target="_blank">Patent Guidance and General Info</a></div>
+       <script language="javascript">  
+        document.write("<div id=\"PatentInformation0\"><a href=\"javascript:showMenu('codesrulesmanuals')\"><img src=\'/internetPortal/themes/html/internetPortal/NavigationCollapsed.gif\' alt=\"Click here to expand this section\" title=\"Click here to expand this section\" />Codes, Rules &amp; Manuals</a></div>");
+        document.write("<div id=\"PatentInformation1\"><a href=\"javascript:showMenu('employeeofficedirectories')\"><img src=\'/internetPortal/themes/html/internetPortal/NavigationCollapsed.gif\' alt=\"Click here to expand this section\" title=\"Click here to expand this section\" />Employee &amp; Office Directories</a></div>");
+        document.write("<div id=\"PatentInformation2\"><a href=\"javascript:showMenu('resourcespublicnotices')\"><img src=\'/internetPortal/themes/html/internetPortal/NavigationCollapsed.gif\' alt=\"Click here to expand this section\" title=\"Click here to expand this section\" />Resources &amp; Public Notices</a></div>");
+       </script>
+       <noscript>
+	       <div id="PatentInformation0"><a><strong>Codes, Rules &amp; Manuals</strong></a><br/>
+	            <div style='padding-left:10px;background-color:#D9D9D9;'><a href='http://www.uspto.gov/web/patents/classification' target='_blank'>Manual of Patent Classification</a><br /><a href='http://www.uspto.gov/web/offices/pac/mpep/mpep.htm' target='_blank'>Manual of Examining Procedure</a></div>
+	        </div>
+	        <div id="PatentInformation1"><a><strong>Employee &amp; Office Directories</strong></a><br/>
+	            <div style='padding-left:10px;background-color:#D9D9D9;'><a href='http://portal.uspto.gov/external/portal/emlocator' target='_blank'>Employee Locator</a><br /><a href='http://www.uspto.gov/about/contacts/organizationalcodes.jsp' target='_blank'>Valid Location Codes</a><br /><a href='http://www.uspto.gov/about/contacts/phone_directory/index.jsp' target='_blank'>Telephone Directory</a></div>
+	        </div>
+	        <div id="PatentInformation2"><a><strong>Resources &amp; Public Notices</strong></a><br/>
+	           <div style='padding-left:10px;background-color:#D9D9D9;'>
+	           <p><a href='http://www.uspto.gov/inventors/index.jsp' target='_blank'>Applicant Resources</a><br/>
+	              <a href='http://des.uspto.gov/OEDCI' target='_blank'>Locate Registered Patent Attorney/Agent</a><br/>         
+	              <a href='http://www.uspto.gov/news/index.jsp' target='_blank'>News, Federal Register &amp; OG Notices</a><br/>
+	              <a href='http://www.uspto.gov/products/library/ptdl/index.jsp' target='_blank'>PTDL Program</a>
+	           </p>
+	          </div>
+	        </div>
+	    </noscript>
+</div><br />
+<div class="blueShadow">Patent Searches</div>
+<div id="PatentSearch" class="leftNav">
+      <div><a href="http://www.uspto.gov/news/og/patent_og/index.jsp" target="_blank">Patent Official Gazette</a></div>
+       <script language="javascript">  
+        document.write("<div id=\"PatentSearch0\"><a href=\"javascript:showMenu('searchpatents')\"><img src=\'/internetPortal/themes/html/internetPortal/NavigationCollapsed.gif\' alt=\"Click here to expand this section\" title=\"Click here to expand this section\" />Search Patents &amp; Applications</a></div>");
+        document.write("<div id=\"PatentSearch1\"><a href=\"javascript:showMenu('searchbiological')\"><img src=\'/internetPortal/themes/html/internetPortal/NavigationCollapsed.gif\' alt=\"Click here to expand this section\" title=\"Click here to expand this section\" />Search Biological Sequences</a></div>");
+        document.write("<div id=\"PatentSearch2\"><a href=\"javascript:showMenu('copiesproductsservices')\"><img src=\'/internetPortal/themes/html/internetPortal/NavigationCollapsed.gif\' alt=\"Click here to expand this section\" title=\"Click here to expand this section\" />Copies, Products &amp; Services</a></div>");
+       </script>
+       <noscript>   
+	        <div id="PatentSearch0"><a><strong>Search Patents &amp; Applications</strong></a><br/>
+	           <div style='padding-left:10px;background-color:#D9D9D9;'><a href='http://patft.uspto.gov/' title='Search patents Applications' target='_blank'>Search Full Text and Images</a><br /><a href='http://www.uspto.gov/patft/help/images.htm' target='_blank'>How to View Patent Images</a><br /><a href='http://www.uspto.gov/faq/other.jsp' target='_blank'>Search International Patents</a><br /><a href='http://portal.uspto.gov/external/portal/gau' target='_blank'>Search Class/Subclass/GAU</a><br /><a href='http://www.uspto.gov/main/profiles/acadres.htm' target='_blank'>Search Resources &amp; Tips</a></div>
+	        </div>
+	        <div id="PatentSearch1"><a><strong>Search Biological Sequences</strong></a><br/>
+	            <div style='padding-left:10px;background-color:#D9D9D9;'><a href='http://www.uspto.gov/patents/resources/tools/index.jsp' target='_blank'>Software for Sequence Listings</a></div>
+	        </div>
+	        <div id="PatentSearch2"><a><strong>Copies, Products &amp; Servies</strong></a><br/>
+	          <div style='padding-left:10px;background-color:#D9D9D9;'>
+	               <a href='http://ebiz1.uspto.gov/oems25p/index.html' target='_blank'>Order Copies &amp; Publications Online</a><br/><a href='http://www.uspto.gov/products/index.jsp' target='_blank'>Other Products &amp; Services</a>        
+	          </div>
+	        </div>
+       </noscript>
+</div><br />
+<div class="blueShadow">Other</div>
+<div id="Other" class="leftNav">
+	    <div><a href="http://www.uspto.gov/main/profiles/copyright.htm" target="_blank">Copyrights</a></div>
+	    <div><a href="http://www.uspto.gov/trademarks/index.jsp" target="_blank">Trademarks</a></div>
+	    <div><a href="http://www.uspto.gov/main/policy.htm" target="_blank">Policy &amp; Law</a></div>
+	    <div><a href="http://www.uspto.gov/main/checkstatus.htm" target="_blank">Reports</a></div>
+</div>
+							 </td>
+						  </tr>
+					  </table>
+					  <table border="0" width="100%" cellpadding="0" cellspacing="0">
+						  <tr height="1">
+						       <td width="100%" height="2"><img alt="" border="0" width="1" height="2" src='/internetPortal/skins/html/Corner_Blue/dot.gif'></td>
+					   	  </tr>
+					   </table>
+				    </td>
+				    <td bgcolor="#000000" width="1"><img alt="" border="0" width="1" height="1" src='/internetPortal/skins/html/Corner_Blue/dot.gif'></td>
+				</tr>
+				<tr height="1">
+				    <td bgcolor="#000000" width="1" height="1"><img alt="" border="0" width="1" height="1" src='/internetPortal/skins/html/Corner_Blue/dot.gif'></td>
+				    <td bgcolor="#000000" height="1"><img alt="" border="0" width="1" height="1" src='/internetPortal/skins/html/Corner_Blue/dot.gif'></td>
+				    <td bgcolor="#000000" width="1" height="1"><img alt="" border="0" width="1" height="1" src='/internetPortal/skins/html/Corner_Blue/dot.gif'></td>
+				</tr>
+			 
+			 
+		  </table>
+
+	   </td>
+    </tr>
+</table> 
+</td></tr> 
+</table> 
+</td> 
+<td valign="top" > 
+ 
+ 
+ 
+ 
+ 
+<table border="0" width="100%" cellpadding="0" cellspacing="0" align="center"> 
+<tr><td width="100%" valign="top">
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+<a name="7_MO5175930G9F00IH1ROSM63026"></a>
+
+
+    
+
+<table border="0" width="100%" cellpadding="0" cellspacing="5">
+    <tr>
+	   <td>	   
+		  <table border="0" width="100%" height="100%" cellpadding="0" cellspacing="0" class="wpsPortletBody">		  
+			 <tr height="1">
+				<td colspan="3">
+				    <table border="0" height="22" width="100%" cellpadding="0" cellspacing="0">
+					   <tr>
+						  <td class="blueShadow" valign="top" align="right"><img alt="" border="0" src='/internetPortal/skins/html/Corner_Blue/Corner_rtl.gif'></td>
+						  <td class="blueShadow" width="1" ><img alt="" border="0" width="1" height="1" src='/internetPortal/skins/html/Corner_Blue/dot.gif'/></td>
+						  <td class="blueShadow" width="100%" nowrap align="left" valign="middle">&nbsp;&nbsp;
+							 Patent Application Information Retrieval
+						  </td>
+
+						 
+							 
+							 
+								<td class="blueShadow"><a href='/external/portal/!ut/p/c5/04_SB8K8xLLM9MSSzPy8xBz9CP0os3hff1NDc1NLYwN3SzcDA08PwyD_YF8zINcYKB-JW97AiCLdBgR0h4Nci992vPIGEHkDHMDRQN_PIz83Vb8gNzTCIDMgHQCGKKj-/dl3/d3/L0lDU0tLVUEhL3dPa0FKRk5FRENBIS80QkVqOTRBZy83X01PNTE3NTkzMEc5RjAwSUgxUk9TTTYzMDI2L21heGltaXplZA!!/'><img border="0" valign="middle" align="right" class="wpsPortletTitleIcon" src='/internetPortal/skins/html/Corner_Blue/title_maximize.gif' alt='Maximize'	title='Maximize'></a></td>
+							 
+						 
+						 
+						 
+						  <td class="blueShadow" width="1" ><img alt="" border="0" width="1" height="1" src='/internetPortal/skins/html/Corner_Blue/dot.gif'></td>
+						  <td class="blueShadow" valign="top" align="right"><img alt="" border="0" src='/internetPortal/skins/html/Corner_Blue/Corner.gif'></td>
+					   </tr>
+				    </table>				    	  
+				</td>
+			 </tr>
+						  
+			 
+				<tr height="100%">
+				    <td bgcolor="#000000" width="1"><img alt="" border="0" width="1" height="1" src='/internetPortal/skins/html/Corner_Blue/dot.gif'></td>
+				    <td width="100%" height="100%" valign="top">
+					   <table border="0" width="100%" cellpadding="0" cellspacing="0">
+						   <tr height="1">
+							  <td width="1" height="1"><img alt="" border="0" width="1" height="1" src='/internetPortal/skins/html/Corner_Blue/dot.gif'></td>
+						   </tr>
+				    	   </table>   
+					   <table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
+						  <tr>
+							 <td dir="ltr" height="100%" valign="top">
+								<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+
+
+<META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<META name="GENERATOR" content="IBM WebSphere Studio">
+
+<LINK REL=STYLESHEET TYPE="text/css" HREF="/external/PA_PeaiPair/css/MyEpoLineTheme.css">
+
+
+
+
+
+
+
+
+
+	
+		
+
+
+<script language="JavaScript">
+function getDossier() {
+  var theDosnum=escape(document.save.dosnum.value);
+  var i=theDosnum.indexOf("%20");
+  var theLength=theDosnum.length;
+  while (i != -1) {
+    if (i>0) theDosnum=theDosnum.substring(0,i)+theDosnum.substring(i+3,theLength);
+    else theDosnum=theDosnum.substring(i+3,theLength);
+    i=theDosnum.indexOf("%20");
+    theLength -= 3;
+  }
+  theDosnum=unescape(theDosnum);
+  var selval = get_AppSearch_radio_value();
+  if (theLength == 0 || theDosnum == " ") {
+  if('controlNo' == selval)
+  	{
+  	  	alert('Please enter the Control Number.')
+  	}
+  	if('appId' == selval)
+  	{
+  	  	alert('Please enter the Application Number.')
+  	}
+  	if('patentNo' == selval)
+  	{
+  	  	alert('Please enter the Patent Number.')
+  	}
+  	
+  	if('pgPubsNo' == selval)
+  	{
+  	  	alert('Please enter the Publication Number.')
+  	}
+  	if('attorneyNo' == selval)
+  	{
+  	  	alert('Please enter the Attorney Docket Number.')
+  	}
+  	if('pair_pct_search' == selval)
+  	{
+  	  	alert('Please enter the PCT Number.')
+  	}
+  	
+  	return false;
+  }
+  	document.save.selecteddosnum.value = document.save.dosnum.value;
+  	document.save.dosnumber.value = document.save.dosnum.value;
+  	document.save.isSubmitted.value="isSubmitted";
+ 	document.save.submitButtonClicked.value="submitButtonClicked";
+  	document.save.selectedApplication.value = document.save.AppSearchType.selectedIndex;
+  	if('/external/portal/!ut/p/c5/04_SB8K8xLLM9MSSzPy8xBz9CP0os3hff1NDc1NLYwN3SzcDA08PwyD_YF8zINcYKB-JW97AiCLdBgR0h4Nci992vPIGEHkDHMDRQN_PIz83Vb8gNzTCIDMgHQCGKKj-/dl3/d3/L0lDU0lKSWdrbUNTUS9JUFJBQUlpQ2dBek15cXpHWUEhIS80QkVqOG8wRmxHaXQtYlhwQUh0Qi83X01PNTE3NTkzMEc5RjAwSUgxUk9TTTYzMDI2L1JKWE1vMzAwMDA4L3NhLmdldEJpYg!!/' == ''){
+  	document.save.action =  'null';
+  	}else{
+  	  	document.save.action =  '/external/portal/!ut/p/c5/04_SB8K8xLLM9MSSzPy8xBz9CP0os3hff1NDc1NLYwN3SzcDA08PwyD_YF8zINcYKB-JW97AiCLdBgR0h4Nci992vPIGEHkDHMDRQN_PIz83Vb8gNzTCIDMgHQCGKKj-/dl3/d3/L0lDU0lKSWdrbUNTUS9JUFJBQUlpQ2dBek15cXpHWUEhIS80QkVqOG8wRmxHaXQtYlhwQUh0Qi83X01PNTE3NTkzMEc5RjAwSUgxUk9TTTYzMDI2L1JKWE1vMzAwMDA4L3NhLmdldEJpYg!!/';
+  	}
+  	if('appId' == selval)
+  	{
+  	document.save.testHidden.value = 'appId';
+  	document.save.public_selectedSearchOption.value = 'pair_applicationSearchoption';
+  	document.save.is_pair_new_search.value = 'appId';
+  	}
+  	if('attorneyNo' == selval)
+  	{
+  	document.save.testHidden.value = 'attorneyNo';
+  	document.save.public_selectedSearchOption.value = 'pair_attorneySearchoption';
+  	document.save.is_pair_new_search.value = 'docket';
+  	}
+  	 if('controlNo' == selval)
+  	{
+  	document.save.testHidden.value = 'appId';
+  	document.save.public_selectedSearchOption.value = 'pair_applicationSearchoption';
+  	document.save.is_pair_new_search.value = 'appId';
+    document.save.pair_control_no_search.value = 'controlNo';
+  	}
+  	if('patentNo' == selval)
+  	{
+  	document.save.testHidden.value = 'patentNo';
+  	document.save.public_selectedSearchOption.value = 'pair_applicationSearchoption';
+  	document.save.is_pair_new_search.value = 'appId';
+  	}
+  	if('pgPubsNo' == selval)
+  	{
+  	document.save.testHidden.value = 'pgPubsNo';
+  	document.save.public_selectedSearchOption.value = 'pair_applicationSearchoption';
+  	document.save.is_pair_new_search.value = 'appId';
+  	}
+  	if('pair_pct_search' == selval)
+  	{
+  	document.save.testHidden.value = 'pair_pct_search';
+  	document.save.public_selectedSearchOption.value = 'pair_applicationSearchoption';
+  	document.save.is_pair_new_search.value = 'pair_pct_search';
+  	}
+  	
+  	document.save.AppSearchType.value = document.save.testHidden.value;
+	document.save.submit();
+}
+
+function trim(a){
+	var tmp=new Array();
+	for(j=0;j<a.length;j++)
+		if(a[j]!='')
+			tmp[tmp.length]=a[j];
+	a.length=tmp.length;
+	for(j=0;j<tmp.length;j++)
+		a[j]=tmp[j];
+	return a;
+}
+function historyIsSelected(){
+	document.save.selecteddosnum.value = document.save.dosnumsele.options[document.save.dosnumsele.selectedIndex].value;
+	document.save.dosnum.value = document.save.dosnumsele.options[document.save.dosnumsele.selectedIndex].value;
+	document.save.historyNumber.value = document.save.dosnumsele.options[document.save.dosnumsele.selectedIndex].value;
+	document.save.isHistorySelected.value = "Yes";
+	document.save.submit();
+}
+
+
+function topicSelection(){
+document.save.searchType.value = document.save.AppSearchType.value;
+
+}
+
+function setCaretAtEnd (field) {
+
+  if (field.createTextRange) {
+    var r = field.createTextRange();
+    r.moveStart('character', field.value.length);
+    r.collapse();
+    r.select();
+  }
+}
+
+function openOrderCertifiedWindow(){
+window.open("/external/PA_PeaiPair/html/OrderCertified.html", "USPTO", "location=no,height=600,width=600,resizable=yes", false);
+}
+
+function setVisibility(curElm, visibility)
+{
+        var style = document.getElementById(curElm).style;      
+if(style)
+{
+    style.visibility = visibility;
+}
+}
+function handleSelectionChange()
+{
+    var combinedCustomerForm    = document.combinedCustomerForm;
+    var selection               = combinedCustomerForm.selection;
+    var selectedIndex           = selection.selectedIndex;
+    var selectionValue          = selection.options[selectedIndex].value;
+    var notificationPeriod = combinedCustomerForm.notificationPeriod;
+    if(selectionValue == "document.customerform")
+    {
+        //notificationPeriod.disabled = true;
+        setVisibility("notificationPeriodSpan", "hidden");
+    }
+    else if(selectionValue == "document.custDetailsForm")
+    {
+        //notificationPeriod.disabled = true;
+        setVisibility("notificationPeriodSpan", "hidden");
+    }
+    else if(selectionValue == "document.custNotificationsForm")
+    {
+        //notificationPeriod.disabled = false;
+        setVisibility("notificationPeriodSpan", "visible");
+    }
+}
+//-->
+
+function get_AppSearch_radio_value()
+{
+for (var i=0; i < document.save.appSelectedType.length; i++)
+   {
+   if (document.save.appSelectedType[i].checked)
+      {
+      var rad_val = document.save.appSelectedType[i].value;
+      return rad_val;
+      }
+   }
+}
+
+function get_CustSearch_radio_value()
+{
+for (var i=0; i < document.combinedCustomerForm.customerSelectedType.length; i++)
+   {
+   if (document.combinedCustomerForm.customerSelectedType[i].checked)
+      {
+      var rad_val = document.combinedCustomerForm.customerSelectedType[i].value;
+      return rad_val;
+      }
+   }
+}
+
+
+function setDaysChangeOld()
+{
+if('viewOutgoingCorrAdd'==get_CustSearch_radio_value())
+{
+setVisibility("notificationPeriodSpan", "visible");
+}
+else
+{
+setVisibility("notificationPeriodSpan", "hidden");
+}
+}
+//Start of Code added for Multipe Apps download
+function setDaysChange()
+{
+setVisibility("applicationsStatusChangePeriodSpan", "hidden");
+if('viewOutgoingCorrAdd'==get_CustSearch_radio_value())
+{
+setVisibility("notificationPeriodSpan", "visible");
+}
+else
+{
+setVisibility("notificationPeriodSpan", "hidden");
+}
+}
+function setStatusChange()
+{
+if('appsByCustnoForStatusChange'==get_CustSearch_radio_value())
+{
+setVisibility("applicationsStatusChangePeriodSpan", "visible");
+setVisibility("notificationPeriodSpan", "hidden");
+}
+}
+//End of Code added for Multipe Apps download
+</script>
+
+
+<script language="JavaScript">
+<!--
+function swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function findObj(n, d) { //v4.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=findObj(n,d.layers[i].document);
+  if(!x && document.getElementById) x=document.getElementById(n); return x;
+}
+
+function swapImage() { //v3.0
+  var i,j=0,x,a=swapImage.arguments;
+  document.MM_sr=new Array; 
+  for(i=0;i<(a.length-2);i+=3)
+   if ((x=findObj(a[i]))!=null){document.MM_sr[j++]=x;if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function nbGroup(event, grpName) { //v3.0
+  var i,img,nbArr,args=nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : args[i+1];
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    if ((nbArr = document[grpName]) != null)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = args[i+1];
+      nbArr[nbArr.length] = img;
+  } }
+}
+function submitTab(selectedTab){
+document.save.selectedTab.value='selectnewcase';
+document.save.isSubmitted.value='isSubmitted'
+document.save.action =  '/external/portal/!ut/p/c5/04_SB8K8xLLM9MSSzPy8xBz9CP0os3hff1NDc1NLYwN3SzcDA08PwyD_YF8zINcYKB-JW97AiCLdBgR0h4Nci992vPIGEHkDHMDRQN_PIz83Vb8gNzTCIDMgHQCGKKj-/dl3/d3/L0lDU0lKSWdrbUNTUS9JUFJBQUlpQ2dBek15cXpHWUEhIS80QkVqOG8wRmxHaXQtYlhwQUh0Qi83X01PNTE3NTkzMEc5RjAwSUgxUk9TTTYzMDI2L1JKWE1vMzAwMDA4L3NhLmdldEJpYg!!/';
+
+
+
+}
+//-->
+</script>
+
+<script>
+function submitCustomer()
+{
+  	if('/external/portal/!ut/p/c5/04_SB8K8xLLM9MSSzPy8xBz9CP0os3hff1NDc1NLYwN3SzcDA08PwyD_YF8zINcYKB-JW97AiCLdBgR0h4Nci992vPIGEHkDHMDRQN_PIz83Vb8gNzTCIDMgHQCGKKj-/dl3/d3/L0lDU0lKSWdrbUNTUS9JUFJBQUlpQ2dBek15cXpHWUEhIS80QkVqOG8wRmxHaXQtYlhwQUh0Qi83X01PNTE3NTkzMEc5RjAwSUgxUk9TTTYzMDI2L1JKWE1vMzAwMDA4L3NhLmdldEJpYg!!/' == ''){
+  	document.combinedCustomerForm.action =  'null';
+  	}else{
+  	  	document.combinedCustomerForm.action =  '/external/portal/!ut/p/c5/04_SB8K8xLLM9MSSzPy8xBz9CP0os3hff1NDc1NLYwN3SzcDA08PwyD_YF8zINcYKB-JW97AiCLdBgR0h4Nci992vPIGEHkDHMDRQN_PIz83Vb8gNzTCIDMgHQCGKKj-/dl3/d3/L0lDU0lKSWdrbUNTUS9JUFJBQUlpQ2dBek15cXpHWUEhIS80QkVqOG8wRmxHaXQtYlhwQUh0Qi83X01PNTE3NTkzMEc5RjAwSUgxUk9TTTYzMDI2L1JKWE1vMzAwMDA4L3NhLmdldEJpYg!!/';
+  	}
+  	document.combinedCustomerForm.customerSubmission.value = 'true';
+  	var selectedCustOption = get_CustSearch_radio_value();
+  	if('appsByCustnoForCorrAdd'==selectedCustOption)
+  	{
+  	document.combinedCustomerForm.selectedTab.value="pair_AppsbyCustomerNumberDetails";
+  	document.combinedCustomerForm.private_selectedSearchOption.value = 'pair_appsbyCustomerSearchoption';
+  	}
+  	//Start of Code added for Multipe Apps download
+  	if('appsByCustnoForStatusChange'==selectedCustOption)
+  	{
+  	document.combinedCustomerForm.selectedTab.value="pair_AppsWithStatusChangesbyCustomerNumber";
+  	document.combinedCustomerForm.private_selectedSearchOption.value = 'pair_AppsWithStatusChangesbyCustomerNumberSearchoption';
+  	}
+	//End of Code added for Multipe Apps download -->
+  	
+  	if('viewCustNoDetails'==selectedCustOption)
+  	{
+  	  	document.combinedCustomerForm.selectedTab.value="pair_CustomerNumberDetails";
+  	document.combinedCustomerForm.private_selectedSearchOption.value = 'pair_customerNumberDetailsOption';
+  	}
+  	
+  	if('viewOutgoingCorrAdd'==selectedCustOption)
+  	{
+  	  	document.combinedCustomerForm.selectedTab.value="pair_CustomerOutgoingCorrespondence";
+  	document.combinedCustomerForm.private_selectedSearchOption.value = 'pair_CustomerOutgoingCorrespondence';
+  	}
+	document.combinedCustomerForm.submit();
+}
+</script>
+
+<script>
+function hideAndSeekSearchCriteria( selectedRaidoButton)
+{
+}
+function hideAndSeekSearchCriteriaOLD( selectedRaidoButton)
+{
+if('app' == selectedRaidoButton)
+{
+document.save.dosnum.value='';
+document.save.dosnum.focus();
+}
+if('att' == selectedRaidoButton)
+{
+document.save.dosnum.value='';
+document.save.dosnum.focus();
+}
+if('ctr' == selectedRaidoButton)
+{
+document.save.dosnum.value='';
+document.save.dosnum.focus();
+}
+if('pat' == selectedRaidoButton)
+{
+document.save.dosnum.value='';
+document.save.dosnum.focus();
+}
+if('pct' == selectedRaidoButton)
+{
+document.save.dosnum.value='';
+document.save.dosnum.value='PCT/';
+document.save.dosnum.focus();
+}
+if('pub' == selectedRaidoButton)
+{
+document.save.dosnum.value='';
+document.save.dosnum.focus();
+}
+
+}
+</script>
+<script language="JavaScript">
+function submitForAttorneyDktNumber() {
+  var theDosnum=escape(document.attDktForm.dosnum.value);
+  var i=theDosnum.indexOf("%20");
+  var theLength=theDosnum.length;
+  while (i != -1) {
+    if (i>0) theDosnum=theDosnum.substring(0,i)+theDosnum.substring(i+3,theLength);
+    else theDosnum=theDosnum.substring(i+3,theLength);
+    i=theDosnum.indexOf("%20");
+    theLength -= 3;
+  }
+  theDosnum=unescape(theDosnum);
+  if (theLength == 0 || theDosnum == " ") 
+  {
+  	  	alert('Please enter the Attorney Docket Number.')
+  	return false;
+  }
+  	document.attDktForm.selecteddosnum.value = document.save.dosnum.value;
+  	document.attDktForm.dosnumber.value = document.save.dosnum.value;
+  	document.attDktForm.isSubmitted.value="isSubmitted";
+ 	document.attDktForm.submitButtonClicked.value="submitButtonClicked";
+  	document.attDktForm.selectedApplication.value = document.save.AppSearchType.selectedIndex;
+  	if('/external/portal/!ut/p/c5/04_SB8K8xLLM9MSSzPy8xBz9CP0os3hff1NDc1NLYwN3SzcDA08PwyD_YF8zINcYKB-JW97AiCLdBgR0h4Nci992vPIGEHkDHMDRQN_PIz83Vb8gNzTCIDMgHQCGKKj-/dl3/d3/L0lDU0lKSWdrbUNTUS9JUFJBQUlpQ2dBek15cXpHWUEhIS80QkVqOG8wRmxHaXQtYlhwQUh0Qi83X01PNTE3NTkzMEc5RjAwSUgxUk9TTTYzMDI2L1JKWE1vMzAwMDA4L3NhLmdldEJpYg!!/' == ''){
+  	document.attDktForm.action =  'null';
+  	}else{
+  	  	document.attDktForm.action =  '/external/portal/!ut/p/c5/04_SB8K8xLLM9MSSzPy8xBz9CP0os3hff1NDc1NLYwN3SzcDA08PwyD_YF8zINcYKB-JW97AiCLdBgR0h4Nci992vPIGEHkDHMDRQN_PIz83Vb8gNzTCIDMgHQCGKKj-/dl3/d3/L0lDU0lKSWdrbUNTUS9JUFJBQUlpQ2dBek15cXpHWUEhIS80QkVqOG8wRmxHaXQtYlhwQUh0Qi83X01PNTE3NTkzMEc5RjAwSUgxUk9TTTYzMDI2L1JKWE1vMzAwMDA4L3NhLmdldEJpYg!!/';
+  	}
+  	//document.save.testHidden.value = 'attorneyNo';
+  	document.attDktForm.selectedTab.value = 'pair_attorneyDocketDetails';
+  	document.attDktForm.public_selectedSearchOption.value = 'pair_attorneySearchoption';
+  	document.attDktForm.is_pair_new_search.value = 'docket';
+  	document.attDktForm.AppSearchType.value = document.save.testHidden.value;
+  	
+  	set_AttDkt_search_radio_value();
+  	
+	document.attDktForm.submit();
+}
+</script>
+<script>
+<!--Start of Code which handles XML Download -->
+function downloadXML() {
+if(validateAppNumber())
+{
+document.save.action= '/external/PA_PeaiPair/ApplicationDataDownload';
+document.save.paramForXmlDownload.value='fromSearchScreen';
+document.save.testHidden.value = get_AppSearch_radio_value()
+document.save.submit();
+}
+}
+
+function validateAppNumber()
+{
+  var theDosnum=escape(document.save.dosnum.value);
+  var i=theDosnum.indexOf("%20");
+  var theLength=theDosnum.length;
+  while (i != -1) {
+    if (i>0) theDosnum=theDosnum.substring(0,i)+theDosnum.substring(i+3,theLength);
+    else theDosnum=theDosnum.substring(i+3,theLength);
+    i=theDosnum.indexOf("%20");
+    theLength -= 3;
+  }
+  theDosnum=unescape(theDosnum);
+  var selval = get_AppSearch_radio_value();
+  if (theLength == 0 || theDosnum == " ") 
+  {
+  if('controlNo' == selval)
+  	{
+  	  	alert('Please enter the Control Number.')
+  	}
+  	if('appId' == selval)
+  	{
+  	  	alert('Please enter the Application Number.')
+  	}
+  	if('patentNo' == selval)
+  	{
+  	  	alert('Please enter the Patent Number.')
+  	}
+  	
+  	if('pgPubsNo' == selval)
+  	{
+  	  	alert('Please enter the Publication Number.')
+  	}
+   	if('pair_pct_search' == selval)
+  	{
+  	  	alert('Please enter the PCT Number.')
+  	}
+  	return false;
+}
+	else
+	{
+	 	return true;
+	}
+}
+<!--End of of Code which handles XML Download-->
+</script>
+<script>
+function set_AttDkt_search_radio_value()
+{
+for (var i=0; i < document.attDktForm.attorneyDocketSearchType.length; i++)
+   {
+   if (document.attDktForm.attorneyDocketSearchType[i].checked)
+      {
+      document.attDktForm.att_dkt_search_type.value=document.attDktForm.attorneyDocketSearchType[i].value;
+      }
+   }
+}
+</script>
+<script language="javascript">
+function submitForTheTab(selectedTab){
+document.attDktForm.selectedTab.value=selectedTab
+document.attDktForm.isSubmitted.value='isSubmitted'
+document.attDktForm.action =  '/external/portal/!ut/p/c5/04_SB8K8xLLM9MSSzPy8xBz9CP0os3hff1NDc1NLYwN3SzcDA08PwyD_YF8zINcYKB-JW97AiCLdBgR0h4Nci992vPIGEHkDHMDRQN_PIz83Vb8gNzTCIDMgHQCGKKj-/dl3/d3/L0lDU0lKSWdrbUNTUS9JUFJBQUlpQ2dBek15cXpHWUEhIS80QkVqOG8wRmxHaXQtYlhwQUh0Qi83X01PNTE3NTkzMEc5RjAwSUgxUk9TTTYzMDI2L1JKWE1vMzAwMDA4L3NhLmdldEJpYg!!/';
+document.attDktForm.submit();
+}
+</script>
+
+
+<!--
+<LINK REL=STYLESHEET TYPE="text/css"
+HREF="/external/PA_PeaiPair/css/internetPortal.css">
+-->
+
+
+	
+
+	
+	<LINK REL=STYLESHEET TYPE="text/css"
+	HREF="/internetPortal/themes/html/internetPortal/internetPortal.css">
+	
+
+<table summary="Bib Data" width="100%" 
+	align="center"  border="0" bordercolor="black" cellpadding="1" cellspacing="0">
+	<tbody>
+	<form name="save" method="POST" target="_self"
+	onSubmit="javascript:getDossier(); return false;">
+	<!--Start of TabelRow  to include PEAIUserInterface.jsp-->
+	
+	<!--End of TabelRow  to include PEAIUserInterface.jsp-->
+	
+	
+						<!--Start of the code including select newcase and announcements tabs in PEAI_ErrorDisplayPage.jsp-->
+			<tr >
+				<td style="visibility: visible" height="36" valign="bottom">
+				<img src="/external/PA_PeaiPair/img/tabs/image17off.gif" name="imag17"
+					height="36" hspace="0" vspace="0" border="0"
+					onMouseOver="nbGroup('over','imag17','/external/PA_PeaiPair/img/tabs/image17on.gif','/external/PA_PeaiPair/img/tabs/image17on.gif',1);"
+					onMouseOut="nbGroup('out');"
+					alt="Select New Case" /><img src="/external/PA_PeaiPair/img/tabs/image38off.gif" name="imag38"
+					height="36" hspace="0" vspace="0" border="0"
+					onMouseOver="nbGroup('over','imag38','/external/PA_PeaiPair/img/tabs/image38on.gif','/external/PA_PeaiPair/img/tabs/image38on.gif',1);"
+					onMouseOut="nbGroup('out');"
+					onclick="nbGroup('down','group1','imag38','/external/PA_PeaiPair/img/tabs/image38off.gif',1); submitForTheTab('pair_ebcannouncements_tab')"
+					alt="Select EBC Announcements" /> 
+					</td>
+			</tr>
+				<!--END of the code including select newcase and announcements tabs  in PEAI_ErrorDisplayPage.jsp-->
+	
+	
+	<!--Start of TabelRow  to ApplicationDataScreen-->
+			<tr>
+				<td id="selectnewcase">
+
+
+<!-- Start of Application Search Screen-->
+<div id="pagedescription" class="borderedGray"><a name="#content"></a>&nbsp;Select New Case </div>
+<table width="100%" border=0 cellpadding="0" cellspacing="5">
+  <tr align="left" valign="top">
+  <td width="100%">
+
+
+	
+	
+	
+
+
+
+
+
+
+<!--Start of Error.JSP -->
+
+
+<script language="javascript">
+hideSClinks();
+function hideSClinks(){
+//document.getElementById('oemsLinks').style.visibility = 'hidden';
+//document.getElementById('hideHistory').style.visibility = 'hidden';
+}
+</script>
+
+
+
+
+<!-- Start of the CODE handling the PALM Connection/Time out issues-->
+
+<!-- END of the CODE handling the PALM Connection/Time out issues-->
+
+
+
+
+<DIV ID="ERRORDIV" style="visibility: show">   <!--<table class="epoTableBorder" border="0" cellpadding="5"
+						cellspacing="0" width="100%">
+						<tr >
+							<td ALIGN="CENTER">
+								<h4><font color="red" face="Arial, Helvetica, sans-serif"><b>
+								Sorry 
+								</b></font>
+							</td>
+						</tr>
+</table>
+--> </DIV>
+<!--End of Error.JSP -->
+<!-- end of Error.jsp -->
+	
+	
+
+  </td>
+  </tr></table>
+  
+<!-- embedded PAIR scripts START -->
+
+<div>
+
+<table  border="0" cellpadding="5" cellspacing="0"
+	width="100%">
+
+	<tr class="epoTableBorder">
+		<td class="epoTableBorder">
+
+  <span class="disclaimer">&nbsp;
+  <!--<abbr class="primaryNav" title="required">-->
+  * 
+  <!--</abbr>--> 
+  </span><span class="disclaim"><em>indicates a required field </em></span>
+  <br>
+  <br>
+  You may search for a specific application or conduct a search related to a customer number.
+  </td>
+  </tr>
+  
+  	<tr>
+		<td height="5">
+		</td>
+	</tr>
+  
+  
+  </table>
+
+<!--<form  method="post" name="searchSelectionForm">-->
+
+	<input type=hidden name="loadImages" value="LoadAllImages"> 
+	<input type=hidden	name="searchType"> 
+	<input type="hidden" name="isSubmitted"> 
+	<input type="hidden" name="selectedApplication"> 
+	<input type="hidden" name="dosnumber"> 
+	<input type="hidden" name="historyNumber"> 
+	<input type="hidden" name="isHistorySelected"> 
+	<input type="hidden" name="submitButtonClicked">
+	<input type="hidden" name="AppSearchType" value="appId">
+	<input type="hidden" name="AppSearchType">
+	<input type="hidden" name="selecteddosnum" value='null'>
+	<input type="hidden" name="lang" value='DINO'>
+	<input type="hidden" name="testHidden" >
+	<input type="hidden" name="selectedSearchOption" >
+	<input type="hidden" name="public_selectedSearchOption" >
+	<input type="hidden" name="is_pair_new_search">
+	<input type="hidden" name="pair_control_no_search">
+	<input type="hidden" name="paramForXmlDownload">
+<div class="borderedGray">Search for Application:</div>
+<FIELDSET>
+<LEGEND>Choose type of number:</LEGEND>
+
+<table width="100%" border=0 cellpadding="0" cellspacing="5">
+  <tr align="left" valign="top">
+  <td width="220">
+  <label for="appSelectedType">&nbsp;</label>
+  </td><td>
+<input name="appSelectedType" id="application_number_radiobutton" onClick="javascript:hideAndSeekSearchCriteria('app')" type="radio" value="appId" checked="checked" title="application number">
+<label for="application_number_radiobutton">
+Application Number<span class="suggestion">(EXAMPLE: 99999999 or 99/999999)</span> 
+</label>
+<a href="http://www.uspto.gov/ebc/portal/infoappnum.htm" title="opens new window" 
+target="_blank">
+<img name="imag300" border="0" alt="What is an Application Number?"
+					src="/external/PA_PeaiPair/img/tabs/image16on.gif"
+					onMouseOver="nbGroup('over','imag300','/external/PA_PeaiPair/img/tabs/image16off.gif','/external/PA_PeaiPair/img/tabs/image16off.gif',1);"
+					width="20" height="20" onMouseOut="nbGroup('out');">
+
+</a> 
+<!--
+<img name="imag300" border="0"
+src="/external/PA_PeaiPair/img/tabs/image16on.gif"
+alt="What is an Application Number?"
+onClick="window.open('http://www.uspto.gov/ebc/portal/infoappnum.htm')"
+onMouseOver="nbGroup('over','imag300','/external/PA_PeaiPair/img/tabs/image16off.gif','/external/PA_PeaiPair/img/tabs/image16off.gif',1);"
+width="20" height="20" onMouseOut="nbGroup('out');">
+-->
+ <br>
+<br>
+
+<input name="appSelectedType" id="control_number_radiobutton" onClick="javascript:hideAndSeekSearchCriteria('ctr')" type="radio"  value="controlNo" title="control number">
+<label for="control_number_radiobutton">
+Control Number 
+</label>
+<a href="http://www.uspto.gov/ebc/portal/infoctrlnum.htm" title="opens new window" target="_blank">
+<img name="imag320" border="0" alt="What is a Control Number?"
+					src="/external/PA_PeaiPair/img/tabs/image16on.gif"
+					onMouseOver="nbGroup('over','imag320','/external/PA_PeaiPair/img/tabs/image16off.gif','/external/PA_PeaiPair/img/tabs/image16off.gif',1);"
+					width="20" height="20" onMouseOut="nbGroup('out');">
+
+</a>
+
+<!--
+<img name="imag320" border="0"
+src="/external/PA_PeaiPair/img/tabs/image16on.gif"
+alt="What is a Control Number?"
+onClick="window.open('http://www.uspto.gov/ebc/portal/infoctrlnum.htm')"
+onMouseOver="nbGroup('over','imag320','/external/PA_PeaiPair/img/tabs/image16off.gif','/external/PA_PeaiPair/img/tabs/image16off.gif',1);"
+width="20" height="20" onMouseOut="nbGroup('out');">
+-->
+<br>
+<br>
+<input name="appSelectedType" id="patent_number_radiobutton"  onClick="javascript:hideAndSeekSearchCriteria('pat')" type="radio" value="patentNo" title="patent number">
+<label for="patent_number_radiobutton">
+Patent Number 
+</label>
+
+<a href="http://www.uspto.gov/ebc/portal/infopatnum.htm" title="opens new window" target="_blank">
+<img name="imag330" border="0" alt="What is a Patent Number?"
+					src="/external/PA_PeaiPair/img/tabs/image16on.gif"
+					onMouseOver="nbGroup('over','imag330','/external/PA_PeaiPair/img/tabs/image16off.gif','/external/PA_PeaiPair/img/tabs/image16off.gif',1);"
+					width="20" height="20" onMouseOut="nbGroup('out');">
+</a>
+<!--
+<img name="imag330" border="0"
+src="/external/PA_PeaiPair/img/tabs/image16on.gif"
+alt="What is a Patent Number?"
+onClick="window.open('http://www.uspto.gov/ebc/portal/infopatnum.htm')"
+onMouseOver="nbGroup('over','imag330','/external/PA_PeaiPair/img/tabs/image16off.gif','/external/PA_PeaiPair/img/tabs/image16off.gif',1);"
+width="20" height="20" onMouseOut="nbGroup('out');">
+-->
+<br>
+<br>
+<!-- Start of code for adding PCT search type-->
+
+<input name="appSelectedType" id="pctsearch_number_radiobutton" onClick="javascript:hideAndSeekSearchCriteria('pct')" type="radio" value="pair_pct_search" title="pct number">&nbsp;
+<label for="pctsearch_number_radiobutton">
+PCT Number 
+</label>
+ 
+<span class="suggestion">(EXAMPLE: PCT/CCYY/99999 or PCT/CCYYYY/999999)</span> 
+<a href="http://www.uspto.gov/ebc/portal/infopctnum.htm" title="opens new window" target="_blank">
+<img name="imag340" border="0" alt="What is a PCT Number?"
+					src="/external/PA_PeaiPair/img/tabs/image16on.gif"
+					onMouseOver="nbGroup('over','imag340','/external/PA_PeaiPair/img/tabs/image16off.gif','/external/PA_PeaiPair/img/tabs/image16off.gif',1);"
+					width="20" height="20" onMouseOut="nbGroup('out');">
+
+</a>
+<!--
+<img name="imag340" border="0"
+src="/external/PA_PeaiPair/img/tabs/image16on.gif"
+alt="What is a PCT Number?"
+onClick="window.open('http://www.uspto.gov/ebc/portal/infopctnum.htm')"
+onMouseOver="nbGroup('over','imag340','/external/PA_PeaiPair/img/tabs/image16off.gif','/external/PA_PeaiPair/img/tabs/image16off.gif',1);"
+width="20" height="20" onMouseOut="nbGroup('out');">
+-->
+<br>
+<br>
+
+<!-- End of code for adding PCT search type-->
+
+<input name="appSelectedType" id="publication_number_radiobutton" onClick="javascript:hideAndSeekSearchCriteria('pub')" type="radio" value="pgPubsNo" title="publication number">&nbsp;
+<label for="publication_number_radiobutton">
+Publication Number 
+</label>
+
+<a href="http://www.uspto.gov/ebc/portal/infopubnum.htm" title="opens new window" target="_blank">
+<img name="imag350" border="0" alt="What is a Publication Number?"
+					src="/external/PA_PeaiPair/img/tabs/image16on.gif"
+					onMouseOver="nbGroup('over','imag350','/external/PA_PeaiPair/img/tabs/image16off.gif','/external/PA_PeaiPair/img/tabs/image16off.gif',1);"
+					width="20" height="20" onMouseOut="nbGroup('out');">
+
+
+</a>
+
+<!--<img name="imag350" border="0"
+src="/external/PA_PeaiPair/img/tabs/image16on.gif"
+alt="What is a Publication Number?"
+onClick="window.open('http://www.uspto.gov/ebc/portal/infopubnum.htm')"
+onMouseOver="nbGroup('over','imag350','/external/PA_PeaiPair/img/tabs/image16off.gif','/external/PA_PeaiPair/img/tabs/image16off.gif',1);"
+width="20" height="20" onMouseOut="nbGroup('out');">
+-->
+<br>
+<br>
+
+</td>
+</tr>
+</table>
+
+<!-- End of the code added to display radio buttons-->
+<table width="100%" border=0 cellpadding="0" cellspacing="5">
+
+<tr align="left" valign="middle"><td width="220"> <label for="number_id">&nbsp;<span class="wpsLabelText">
+<!--<abbr class="primaryNav" title="required">-->
+* 
+<!--</abbr>-->
+</span>Enter number:</label></td>
+<td>
+<input name="dosnum" id="number_id" size="18" type="text" value="" title="enter valid number to match selected type above" style="width:200 ">
+  &nbsp;&nbsp;&nbsp;&nbsp;
+<input type="button" onClick='javascript:getDossier(); return false;'name="SubmitPair" value="SEARCH" id="SubmitPAIR" title="Search" tabindex="" >
+
+<!-- Start of Code which handles XML Download-->
+
+<!--
+<img name="imag360" border="0"
+src="/external/PA_PeaiPair/img/tabs/image16on.gif"
+alt="What is XML Download?"
+onClick="window.open('http://www.uspto.gov/ebc/portal/infopairxmldownload.htm')"
+onMouseOver="nbGroup('over','imag360','/external/PA_PeaiPair/img/tabs/image16off.gif','/external/PA_PeaiPair/img/tabs/image16off.gif',1);"
+width="20" height="20" onMouseOut="nbGroup('out');">
+-->
+<!-- End of Code which handles XML Download-->
+
+</td></tr>
+</table>
+</FIELDSET>
+<div id="hideHistory" style="visibility: hidden">
+    <div id="dosnuminputhistorytable">
+      <label for="dosnumsele">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Applications viewed:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="hidden" name="lang" value='DINO'>
+      <select name="dosnumsele" style="width: 120" size="1" onChange="historyIsSelected();" label="historySearchLabel">
+        <option value="    ...     "> ... </option>
+        <option value="    ...     "> ... </option>
+      </select>
+    </div>
+  </div>
+</form>
+</div>
+<!-- Start of Code which is added for new AttDkt row--> 
+<form name="attDktForm" method="POST" target="_self" onSubmit="javascript:submitForAttorneyDktNumber(); return false;">
+	<input type="hidden" name="selecteddosnum" value='null'>
+	<input type="hidden" name="dosnumber"> 
+	<input type="hidden" name="isSubmitted"> 
+	<input type="hidden" name="selectedApplication"> 
+	<input type="hidden" name="submitButtonClicked">
+	<input type="hidden" name="public_selectedSearchOption" >
+	<input type="hidden" name="selectedTab" >
+	<input type="hidden" name="is_pair_new_search">
+	<input type="hidden" name="AppSearchType">
+	<input type=hidden name="att_dkt_search_type"> 
+
+</form>
+<!-- End of Code which is added for new AttDkt row--> 
+
+<div>
+<form method="post" name="combinedCustomerForm">
+<input name="username" type="hidden" value="vkwok">
+<input name="USERCODE" type="hidden" value="2">
+<input name="submission" type="hidden" value="">
+<input name="searchtype" type="hidden" value="">
+<input name="sortby" type="hidden" value="">
+<input name="customerSubmission" type="hidden" value="">
+<input type="hidden" name="selectedSearchOption" >
+<input type="hidden" name="private_selectedSearchOption" >
+<input type="hidden" name="selectedTab" >
+
+<hr noshade color="navy" size="1">
+<!-- End  of Application Search Screen-->
+			
+				</td>
+			</tr>
+	<!--End of TabelRow  to ApplicationDataScreen-->
+	
+	
+	<!--Start of TabelRow  to include Footer-->
+	
+	<!--End of TabelRow  to include Footer-->
+			</tbody>
+</table>
+<script>nbGroup('down','group1','imag17','/external/PA_PeaiPair/img/tabs/image17on.gif',1);
+//document.save.SubmitPair.focus();
+</script>
+<!-- DINO -->
+<!-- footer.jsp -->
+
+
+
+<TABLE border="0" cellpadding="0" cellspacing="0" width="100%">
+
+	<tr id="tdborder">
+		<td height="118" bgcolor="#eeeeee">
+ <div> <em> If you need help:
+              <ul>
+                <li> Call the Patent Electronic Business Center at (866) 217-9197 (toll free) or e-mail <a href="mailto:EBC@uspto.gov">EBC@uspto.gov</a> for specific questions about Patent Application Information Retrieval (PAIR). </li>
+                <li> Send general questions about USPTO programs to the <a href="http://www.uspto.gov/web/menu/feedback.html" tabindex="45" target="_blank"> USPTO Contact Center (UCC) </a> . </li>
+                <li> If you experience technical difficulties or problems with this application, please report them via e-mail to <a href="mailto:usptoinfo@uspto.gov?subject=Electronic%20Business%20Support">Electronic Business Support</a> <a href="mailto:usptoinfo@uspto.gov?subject=Electronic%20Business%20Support" tabindex="0"> </a>or call 1 800-786-9199. </li>
+              </ul>
+    </em> </div>
+		</td>
+	</tr>
+</TABLE>
+
+
+<!-- end of footer.jsp -->
+
+
+
+
+
+							 </td>
+						  </tr>
+					  </table>
+					  <table border="0" width="100%" cellpadding="0" cellspacing="0">
+						  <tr height="1">
+						       <td width="100%" height="2"><img alt="" border="0" width="1" height="2" src='/internetPortal/skins/html/Corner_Blue/dot.gif'></td>
+					   	  </tr>
+					   </table>
+				    </td>
+				    <td bgcolor="#000000" width="1"><img alt="" border="0" width="1" height="1" src='/internetPortal/skins/html/Corner_Blue/dot.gif'></td>
+				</tr>
+				<tr height="1">
+				    <td bgcolor="#000000" width="1" height="1"><img alt="" border="0" width="1" height="1" src='/internetPortal/skins/html/Corner_Blue/dot.gif'></td>
+				    <td bgcolor="#000000" height="1"><img alt="" border="0" width="1" height="1" src='/internetPortal/skins/html/Corner_Blue/dot.gif'></td>
+				    <td bgcolor="#000000" width="1" height="1"><img alt="" border="0" width="1" height="1" src='/internetPortal/skins/html/Corner_Blue/dot.gif'></td>
+				</tr>
+			 
+			 
+		  </table>
+
+	   </td>
+    </tr>
+</table> 
+</td></tr> 
+</table> 
+</td> 
+</tr></table> 
+</td></tr> 
+<tr><td width="100%" valign="top"> 
+ 
+ 
+ 
+ 
+ 
+<table border="0" width="100%" cellpadding="0" cellspacing="0" align="center"><tr height="100%"> 
+<td valign="top" > 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+<a name="7_MO5175930G9F00IH1ROSM63047"></a><div class="wpsPortletBody"><div class="suggestion">
+  You can suggest USPTO webpages or material you would like featured on this section by E-mail to the <a href="mailto:webmaster@uspto.gov">webmaster@uspto.gov</a>.  While we cannot promise to accommodate all requests, your suggestions will be considered and may lead to other improvements on the website.
+</div>
+</div> 
+</td> 
+</tr></table> 
+</td></tr> 
+</table>
+    </div>
+    <div id="footer">
+  <a href="http://www.uspto.gov" title="Home">Home</a> | <a href="http://www.uspto.gov/siteindex.jsp" title="Site Index">Site Index</a> | <a href="http://www.uspto.gov/sitesearch.jsp" title="Search USPTO.gov">Search</a> | <a href="http://www.uspto.gov/ebc/indexebc.html" title="eBusiness">eBusiness</a> | <a href="http://www.uspto.gov/about/contacts/callcenters.jsp" title="Help">Help</a> | <a href="http://www.uspto.gov/privact.jsp" title="Privacy Policy">Privacy Policy</a><br />
+  <br />
+  <br />
+</div><!-- Footer -->
+  </div>
+</body><!-- Body -->
+</html>
+

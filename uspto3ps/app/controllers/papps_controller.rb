@@ -1,6 +1,7 @@
 class PappsController < ApplicationController
   # GET /papps
   # GET /papps.json
+  
   def index
     @papps = Papp.all
 
@@ -28,7 +29,45 @@ class PappsController < ApplicationController
     # Now get rid of starting and ending quotes
     token = token[1..(token.length-2)]
     # Get the recaptcha image
-    recaptcha_image = ag.get("http://www.google.com/recaptcha/api/image?c=" + token)
+    recaptcha_imageURL = ag.get("http://www.google.com/recaptcha/api/image?c=" + token)
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @papps }
+    end
+  end
+  
+  def latestpubapps
+    ag = Mechanize.new
+    @apps = Array.new
+    baseurl = "http://appft1.uspto.gov/netacgi/nph-Parser?Sect1=PTO2&Sect2=HITOFF&p=1&u=%2Fnetahtml%2FPTO%2Fsearch-adv.html&r=0&f=S&l=50&d=PG01&"
+    # figure out what today is, then what day the last thursday was.. wday for thursday = 4
+    today = Date.today
+    if today.wday < 5
+      lthurs = today - (today.wday + 3)
+    else
+      lthurs = today - (today.wday - 4)
+    end
+    dsearch = lthurs.to_s
+    @date = dsearch
+    parts = dsearch.split('-')
+    dateq = "Query=PD%2F" + parts[1] + "%2F" + parts[2] + "%2F" + parts[0]
+    page = ag.get(baseurl + dateq)
+    listing = page.parser.xpath("//table")
+    trs = listing[0].xpath("//tr")
+    trs.each_with_index do |tr, i|
+      tds = tr.search('td')
+      if i == 0
+      else
+        link = tds[1].search('a')
+        link = "http://appft1.uspto.gov" + link.xpath("@href").to_s
+        # tds[1] is the appno, tds[2] is the app title
+        @apps[i-1] = [link, tds[1].text, tds[2].text]
+      end
+    end
+    respond_to do |format|
+      format.html # latestpubapps.html.erb
+      #format.json { render json: @papps }
+    end
   end
 
   # GET /papps/1

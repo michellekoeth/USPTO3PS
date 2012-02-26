@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+<h1>Patent Applications Published on <%= @date %></h1>
+<table border=1 cellpadding=5>
+  <tr>
+    <th><b>App number:</b></th>
+    <th><b>Title:</b></th>
+    <th><b>Link:</b></th>
+  </tr>
+<% @apps.each do | app | %>
+<tr>
+  <td>
+    <%= app[1]%>
+  </td>
+  <td>
+    <%= app[2] %>
+  </td>
+  <td>
+    <a href="<%=app[0]%>"><%=app[0]%></a>
+  </td>
+</tr>
+<% end %>
+</table>
+
+<%= link_to 'Back', papps_path %>

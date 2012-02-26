@@ -31,15 +31,6 @@ inputtext = ""
 puts 'enter the challenge response'
 inputtext = gets
 form['recaptcha_response_field'] = inputtext
+form['recaptcha_challenge_field'] = token
 resp = form.submit
-puts resp.body
-# open browser with captcha image
-#system("open", "http://www.google.com/recaptcha/api/image?c=" + token)
-# enter captcha response in terminal
-#captcha_says                             = ask("Enter Captcha from Browser Image:  ") { |q| q.echo = true }
-#captcha_form["recaptcha_response_field"] = captcha_says
-# submit captcha
-#captcha_form.action                      = "http://www.google.com/recaptcha/api/noscript?#{params}"
-#captcha_response                         = captcha_form.submit
-# grab secret
-#captcha_response                         = captcha_response.parser.css("textarea").first.text
+# resp now will have the post-captcha page.. you can now submit searches against pair for file wrapper data
