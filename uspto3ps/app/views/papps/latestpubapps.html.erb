@@ -6,16 +6,16 @@
     <th><b>Title:</b></th>
     <th><b>Link:</b></th>
   </tr>
-<% @apps.each do | app | %>
+<% @papps.each do | app | %>
 <tr>
   <td>
-    <%= app[1]%>
+    <%= link_to app.pubno, papp_path(app.id) %>
   </td>
   <td>
-    <%= app[2] %>
+    <%= app.title %>
   </td>
   <td>
-    <a href="<%=app[0]%>"><%=app[0]%></a>
+    <a href="<%=app.linktoapp%>"><%=app.linktoapp%></a>
   </td>
 </tr>
 <% end %>

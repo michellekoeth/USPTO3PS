@@ -11,11 +11,8 @@ class PappsController < ApplicationController
     end
   end
   
-  def scrape
+  def getcaptcha
     ag = Mechanize.new
-    #ag.keep_alive = false  
-    # Need to set this or you get OpenSSL errors:
-    #ag.agent.http.verify_mode = OpenSSL::SSL::VERIFY_NONE
     page = ag.get("http://portal.uspto.gov/external/portal/pair")
     # We need the recaptcha URL which has the token we want - on the Public Pair page, this is the table
     # class=epoTableBorder. The third tr has the recaptcha URL
@@ -28,25 +25,64 @@ class PappsController < ApplicationController
     token = token.partition(",")[0]
     # Now get rid of starting and ending quotes
     token = token[1..(token.length-2)]
-    # Get the recaptcha image
-    recaptcha_imageURL = ag.get("http://www.google.com/recaptcha/api/image?c=" + token)
+    session['tok'] = token
+    # Get the recaptcha imageURL
+    @recaptcha_imageURL = "http://www.google.com/recaptcha/api/image?c=" + token
+    # You cant serialize a Mechanize object, (coz of live TCP connection) but you can serialize the cookies
+    ag.cookie_jar.save_as('cookies.yml')
+    getjss= page.body.partition('function getDossier() {')
+    session['getdoscodes'] = getjss[2].partition('</script>')[0]
+    jsreplace = page.body.partition('<script type="text/javascript" src="http://api.recaptcha.net/challenge?k=')[2]
+    session['jsrep'] = jsreplace.partition('</script>')[0]
+    #aFile = File.new("page.html", "w")
+    #aFile.write(page.body)
+    #aFile.close
+    # USe the current_page function with the mechanize agent once it is reestablished by reloading the serialized cookie jar
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @papps }
     end
   end
   
-  def latestpubapps
+  def postcaptchascrape
     ag = Mechanize.new
-    @apps = Array.new
-    baseurl = "http://appft1.uspto.gov/netacgi/nph-Parser?Sect1=PTO2&Sect2=HITOFF&p=1&u=%2Fnetahtml%2FPTO%2Fsearch-adv.html&r=0&f=S&l=50&d=PG01&"
-    # figure out what today is, then what day the last thursday was.. wday for thursday = 4
+    ag.cookie_jar.load('cookies.yml')
+    page = ag.get("http://portal.uspto.gov/external/portal/pair")
+    getjss= page.body.partition('function getDossier() {')
+    doscodes = getjss[2].partition('</script>')[0]
+    # replace the new getDossier function with the previous one for which we have the captcha info
+    page.body.sub(doscodes,session['getdoscodes'])
+    # The javascript that deals with the captcha must be copied out and replaced in the new page. Then we also might need all the
+    # hidden vars as well. This is the getDossier() function, and
+    # <script type="text/javascript" src="http://api.recaptcha.net/challenge?k=..."></script>
+    jsreplace = page.body.partition('<script type="text/javascript" src="http://api.recaptcha.net/challenge?k=')[2]
+    page.body.sub(jsreplace.partition('</script>')[0], session['jsrep'])
+    form = page.forms.first
+    inputtext = params[:recaptcharesponse]
+    form['recaptcha_response_field'] = inputtext
+    form['recaptcha_challenge_field'] = session['tok']
+    resp = form.submit
+    # At this point, we are recaptcha'd thru into PAIR. Next up is submitting a patent pub no to get the filewrapper
+    #aFile = File.new("resp.html", "w")
+    #aFile.write(resp.body)
+    #aFile.close
+    
+  end
+  
+  def latestpubapps
+    # see if there are already the latest published apps in the database
     today = Date.today
+    # figure out what today is, then what day the last thursday was.. wday for thursday = 4
     if today.wday < 5
       lthurs = today - (today.wday + 3)
     else
       lthurs = today - (today.wday - 4)
     end
+    @papp = Papp.find(:all, :conditions => { :pubdate => lthurs})
+    # now @papp will have all published apps that are in the database from the last publishing date (thurs)
+    ag = Mechanize.new
+    @apps = Array.new
+    baseurl = "http://appft1.uspto.gov/netacgi/nph-Parser?Sect1=PTO2&Sect2=HITOFF&p=1&u=%2Fnetahtml%2FPTO%2Fsearch-adv.html&r=0&f=S&l=50&d=PG01&"
     dsearch = lthurs.to_s
     @date = dsearch
     parts = dsearch.split('-')
@@ -64,6 +100,19 @@ class PappsController < ApplicationController
         @apps[i-1] = [link, tds[1].text, tds[2].text]
       end
     end
+      @apps.each do |app|
+        # See if there is already a Papp in the database for the one just found:
+        dbpapp = Papp.find(:first, :conditions => "pubno = '#{app[1]}'")
+        if dbpapp
+          #then there is one in the db already - we will check if all fields are there
+          Papp.update(dbpapp.id, {:pubno => app[1], :published => true, :pubdate => lthurs, :pubrequest => true, :title => app[2], :linktoapp => app[0]})
+        else
+          # there is no papp in the database - need to add one
+          p = Papp.new(:pubno => app[1], :published => true, :pubdate => lthurs, :pubrequest => true, :title => app[2], :linktoapp => app[0])
+          p.save
+        end
+      end
+      @papps = Papp.all
     respond_to do |format|
       format.html # latestpubapps.html.erb
       #format.json { render json: @papps }

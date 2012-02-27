@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+<h1>Enter the Recaptcha to get USPTO data</h1>
+<img src="<%= @recaptcha_imageURL %>">
+<%= form_tag("/postcaptchascrape", :method => "get") do %>
+<%= label_tag(:recaptcharesponse, "Enter Response:") %>
+  <%= text_field_tag(:recaptcharesponse) %>
+  <%= submit_tag("Continue") %>
+  <% end %>
+<%= link_to 'Back', papps_path %>

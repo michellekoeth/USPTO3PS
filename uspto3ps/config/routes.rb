@@ -5,6 +5,8 @@ Uspto3ps::Application.routes.draw do
   # just remember to delete public/index.html.
   root :to => "home#index"
   match 'currapps' => 'papps#latestpubapps'
+  match 'getcaptcha' => 'papps#getcaptcha'
+  match 'postcaptchascrape' => 'papps#postcaptchascrape'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
