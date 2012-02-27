@@ -31,6 +31,10 @@ class PappsController < ApplicationController
     # You cant serialize a Mechanize object, (coz of live TCP connection) but you can serialize the cookies
     ag.cookie_jar.save_as('cookies.yml')
     getjss= page.body.partition('function getDossier() {')
+    # We also need to save specifically the save form's action which is hidden up in the javascript
+    sfactionin = page.body.index("document.save.action =  '/external/portal")
+    session['sfactiontok'] = page.body[(sfactionin+25)..(sfactionin+331)]
+    #puts "form action: " + session['sfactiontok']
     session['getdoscodes'] = getjss[2].partition('</script>')[0]
     jsreplace = page.body.partition('<script type="text/javascript" src="http://api.recaptcha.net/challenge?k=')[2]
     session['jsrep'] = jsreplace.partition('</script>')[0]
@@ -45,6 +49,7 @@ class PappsController < ApplicationController
   end
   
   def postcaptchascrape
+    appno = params[:apppubno]
     ag = Mechanize.new
     ag.cookie_jar.load('cookies.yml')
     page = ag.get("http://portal.uspto.gov/external/portal/pair")
@@ -58,14 +63,46 @@ class PappsController < ApplicationController
     jsreplace = page.body.partition('<script type="text/javascript" src="http://api.recaptcha.net/challenge?k=')[2]
     page.body.sub(jsreplace.partition('</script>')[0], session['jsrep'])
     form = page.forms.first
-    inputtext = params[:recaptcharesponse]
-    form['recaptcha_response_field'] = inputtext
+    form['recaptcha_response_field'] = params[:recaptcharesponse]
     form['recaptcha_challenge_field'] = session['tok']
     resp = form.submit
-    # At this point, we are recaptcha'd thru into PAIR. Next up is submitting a patent pub no to get the filewrapper
     #aFile = File.new("resp.html", "w")
     #aFile.write(resp.body)
     #aFile.close
+    # At this point, we are recaptcha'd thru into PAIR. Next up is submitting a patent app no to get the filewrapper
+    # Originally I tried to submit the form using the patentpub no, but I was unable to successfully get the form to
+    # search against publication number, so I switched to searching against the default patent app number
+    form1 = resp.forms.first
+    #form1.fields.each { |f| puts f.name }
+    #form1.radiobutton_with(:value => "appId").uncheck
+    #form1.radiobutton_with(:value => "pgPubsNo").check
+    #form1.radiobutton_with(:value => "pgPubsNo").click
+    #puts "Appno checked? is: " + form1.radiobutton_with(:value => "appId").checked?.to_s + " PubNo checked? is: " + form1.radiobutton_with(:value => "pgPubsNo").checked?.to_s
+    # id is number_id, name is dosnum
+    form1['dosnum'] = appno
+    # Next submit the form by clicking the submit button
+    form1['selecteddosnum'] = appno
+    form1['dosnumber'] = appno
+    form1['isSubmitted'] = "isSubmitted"
+    form1['submitButtonClicked'] = "submitButtonClicked"
+    form1['selectedApplication'] = 0 #document.save.AppSearchType.selectedIndex
+    @actionf = session['sfactiontok']
+    form1.action = session['sfactiontok']
+  	#if('/external/portal/!ut/p/c5/04_SB8K8xLLM9MSSzPy8xBz9CP0os3hff1NDc1NLYwN3SzcDA08PwyD_YF8zINcYKB-JW97AiCLdBgR0h4Nci992vPIGEHkDHMDRQN_PIz83Vb8gNzTCIDMgHQCGKKj-/dl3/d3/L0lDU0lKSWdrbUNTUS9JUFJBQUlpQ2dBek15cXpHWUEhIS80QkVqOG8wRmxHaXQtYlhwQUh0Qi83X01PNTE3NTkzMEc5RjAwSUgxUk9TTTYzMDI2L3YyTVdVMzkyNjAwMDgvc2EuZ2V0Qmli/' == ''){
+  	#document.save.action =  'null';
+    
+  	#  	document.save.action =  '/external/portal/!ut/p/c5/04_SB8K8xLLM9MSSzPy8xBz9CP0os3hff1NDc1NLYwN3SzcDA08PwyD_YF8zINcYKB-JW97AiCLdBgR0h4Nci992vPIGEHkDHMDRQN_PIz83Vb8gNzTCIDMgHQCGKKj-/dl3/d3/L0lDU0lKSWdrbUNTUS9JUFJBQUlpQ2dBek15cXpHWUEhIS80QkVqOG8wRmxHaXQtYlhwQUh0Qi83X01PNTE3NTkzMEc5RjAwSUgxUk9TTTYzMDI2L3YyTVdVMzkyNjAwMDgvc2EuZ2V0Qmli/'
+  	
+    form1['testHidden'] = 'appId'
+    form1['public_selectedSearchOption'] = 'pair_applicationSearchoption'
+    form1['is_pair_new_search'] = 'appId'
+    form1['AppSearchType'] = 'appId'
+    resp2 = form1.click_button
+    aFile = File.new("resp2.html", "w")
+    aFile.write(resp2.body)
+    aFile.close
+    #form1.button_with(:value => "SEARCH").click
+
     
   end
   

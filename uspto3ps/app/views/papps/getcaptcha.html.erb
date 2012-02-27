@@ -4,6 +4,8 @@
 <%= form_tag("/postcaptchascrape", :method => "get") do %>
 <%= label_tag(:recaptcharesponse, "Enter Response:") %>
   <%= text_field_tag(:recaptcharesponse) %>
+ <%= label_tag(:recaptcharesponse, "Enter A Patent Application Num to lookup:") %> 
+    <%= text_field_tag(:apppubno) %>
   <%= submit_tag("Continue") %>
   <% end %>
 <%= link_to 'Back', papps_path %>
