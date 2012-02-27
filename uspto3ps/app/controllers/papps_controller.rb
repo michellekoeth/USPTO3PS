@@ -34,7 +34,6 @@ class PappsController < ApplicationController
     # We also need to save specifically the save form's action which is hidden up in the javascript
     sfactionin = page.body.index("document.save.action =  '/external/portal")
     session['sfactiontok'] = page.body[(sfactionin+25)..(sfactionin+331)]
-    #puts "form action: " + session['sfactiontok']
     session['getdoscodes'] = getjss[2].partition('</script>')[0]
     jsreplace = page.body.partition('<script type="text/javascript" src="http://api.recaptcha.net/challenge?k=')[2]
     session['jsrep'] = jsreplace.partition('</script>')[0]
@@ -49,7 +48,10 @@ class PappsController < ApplicationController
   end
   
   def postcaptchascrape
-    appno = params[:apppubno]
+    # app number to be lookedup entered by user
+    appno = params[:appno]
+    # What data from PAIR to get
+    pairtab = params[:tab]
     ag = Mechanize.new
     ag.cookie_jar.load('cookies.yml')
     page = ag.get("http://portal.uspto.gov/external/portal/pair")
@@ -86,22 +88,40 @@ class PappsController < ApplicationController
     form1['isSubmitted'] = "isSubmitted"
     form1['submitButtonClicked'] = "submitButtonClicked"
     form1['selectedApplication'] = 0 #document.save.AppSearchType.selectedIndex
-    @actionf = session['sfactiontok']
+    # This form will not post properly unless we set the form action from the session var
     form1.action = session['sfactiontok']
-  	#if('/external/portal/!ut/p/c5/04_SB8K8xLLM9MSSzPy8xBz9CP0os3hff1NDc1NLYwN3SzcDA08PwyD_YF8zINcYKB-JW97AiCLdBgR0h4Nci992vPIGEHkDHMDRQN_PIz83Vb8gNzTCIDMgHQCGKKj-/dl3/d3/L0lDU0lKSWdrbUNTUS9JUFJBQUlpQ2dBek15cXpHWUEhIS80QkVqOG8wRmxHaXQtYlhwQUh0Qi83X01PNTE3NTkzMEc5RjAwSUgxUk9TTTYzMDI2L3YyTVdVMzkyNjAwMDgvc2EuZ2V0Qmli/' == ''){
-  	#document.save.action =  'null';
-    
-  	#  	document.save.action =  '/external/portal/!ut/p/c5/04_SB8K8xLLM9MSSzPy8xBz9CP0os3hff1NDc1NLYwN3SzcDA08PwyD_YF8zINcYKB-JW97AiCLdBgR0h4Nci992vPIGEHkDHMDRQN_PIz83Vb8gNzTCIDMgHQCGKKj-/dl3/d3/L0lDU0lKSWdrbUNTUS9JUFJBQUlpQ2dBek15cXpHWUEhIS80QkVqOG8wRmxHaXQtYlhwQUh0Qi83X01PNTE3NTkzMEc5RjAwSUgxUk9TTTYzMDI2L3YyTVdVMzkyNjAwMDgvc2EuZ2V0Qmli/'
-  	
     form1['testHidden'] = 'appId'
     form1['public_selectedSearchOption'] = 'pair_applicationSearchoption'
     form1['is_pair_new_search'] = 'appId'
     form1['AppSearchType'] = 'appId'
     resp2 = form1.click_button
-    aFile = File.new("resp2.html", "w")
-    aFile.write(resp2.body)
-    aFile.close
-    #form1.button_with(:value => "SEARCH").click
+    #aFile = File.new("resp2.html", "w")
+    #aFile.write(resp2.body)
+    #aFile.close
+    # Resp2 now has the first application data screen (app data tab) on it
+    # To switch between any of the tabs on PAIR and get the data on those tabs, you need to set the following hidden vars
+    # and then submit as shown below. To go to another tab, just set the selectedTab value to the tab you want
+    # Application Data (default) = "detailstab"
+    # Transaction History = "fileHistorytab"
+    # Image File Wrapper = 'ifwtab'
+    # Continuity Data = 'continuitytab'
+    # Published Documents = 'pubdatestab'
+    # Address & Attorney agent = 'Correspondencetab'
+    # Display References = 'pair_displayDownloadReferences'
+    # Here, I am going to look at the file history
+    form2 = resp2.forms.third
+    form2['selectedTab'] = 'fileHistorytab'
+    form2['isSubmitted'] = 'isSubmitted'
+    # Get the action string from the page
+    actstr = resp2.body.index("document.MainPage.action =  '")
+    form2.action =  resp2.body[(actstr+29)..(actstr+359)]
+    puts "form2 action is: " + resp2.body[(actstr+29)..(actstr+359)]
+    form2['dosnum']= appno
+    tab = form2.submit
+
+    #aFile = File.new("resp3.html", "w")
+    #aFile.write(tab.body)
+    #aFile.close
 
     
   end
