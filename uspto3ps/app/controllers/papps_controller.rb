@@ -28,6 +28,8 @@ class PappsController < ApplicationController
     session['tok'] = token
     # Get the recaptcha imageURL
     @recaptcha_imageURL = "http://www.google.com/recaptcha/api/image?c=" + token
+    #@rcimage = ag.get(@recaptcha_imageURL)
+    #puts "Class of rcimage: " + @rcimage.filename
     # You cant serialize a Mechanize object, (coz of live TCP connection) but you can serialize the cookies
     ag.cookie_jar.save_as('cookies.yml')
     getjss= page.body.partition('function getDossier() {')
