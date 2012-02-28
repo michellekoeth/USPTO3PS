@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-<h1>Enter the Recaptcha to get USPTO data</h1>
+<h2>Enter the Recaptcha to get USPTO data</h2>
 <img src="<%= @recaptcha_imageURL %>">
 <%= form_tag("/postcaptchascrape", :method => "get") do %>
 <%= label_tag(:recaptcharesponse, "Enter Response:") %>
@@ -9,7 +9,28 @@
     <%= text_field_tag(:appno) %>
   <P>
     <%= label_tag(:tab, "Pick which info you'd like from PAIR about this Patent App:") %>
-
+    <p>
+    <%= label_tag(:data2get, "Application Data(default):") %>
+    <%= radio_button_tag 'data2get', 'detailstab', true %>
+    <P>
+    <%= label_tag(:data2get, "Status History:") %>
+    <%= radio_button_tag 'data2get', 'fileHistorytab' %>
+    <P>
+    <%= label_tag(:data2get, "File Wrapper:") %>
+    <%= radio_button_tag 'data2get', 'ifwtab' %>
+    <P>
+    <%= label_tag(:data2get, "Continuity Data:") %>
+    <%= radio_button_tag 'data2get', 'continuitytab' %>
+    <P>
+    <%= label_tag(:data2get, "Publication Data:") %>
+    <%= radio_button_tag 'data2get', 'pubdatestab' %>
+    <P>
+    <%= label_tag(:data2get, "Attorney/Correspondence Data:") %>
+    <%= radio_button_tag 'data2get', 'Correspondencetab' %>
+    <P>
+    <%= label_tag(:data2get, "References of record:") %>
+    <%= radio_button_tag 'data2get', 'pair_displayDownloadReferences' %>
+    <P>
   <%= submit_tag("Continue") %>
   <% end %>
 <%= link_to 'Back', papps_path %>

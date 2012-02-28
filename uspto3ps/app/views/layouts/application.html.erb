@@ -16,6 +16,10 @@
 <body>
 <header id="banner" class="body">
     <div id="head">
+      <div id="menu" style="float:right;">
+	<nav><%= link_to("home", :root) %> | <%= link_to("search", :getcaptcha) %> | <a href="#">login</a> | <a href="#">about</a>
+	</nav>
+    </div>
       <div id="headtext" style="float: left; margin-left: 200px;">
           <h1>PatentBat</h1>
           <h2 style="margin-top: -50px;">Take a swing for patent quality</h2>
@@ -24,15 +28,6 @@
     </div>
     <div id="tagline" style="clear:both;">
 
-    </div>
-    <div id="menu" style="clear:both;">
-	<nav><ul>
-		<li class="active"><a href="#">home</a></li>
-		<li><a href="#">portfolio</a></li>
-
-		<li><a href="#">blog</a></li>
-		<li><a href="#">contact</a></li>
-	</ul></nav>
     </div>
 </header><!-- /#banner -->
 <article>

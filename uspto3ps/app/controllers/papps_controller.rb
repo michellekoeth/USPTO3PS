@@ -51,7 +51,7 @@ class PappsController < ApplicationController
     # app number to be lookedup entered by user
     appno = params[:appno]
     # What data from PAIR to get
-    pairtab = params[:tab]
+    pairtab = params[:data2get]
     ag = Mechanize.new
     ag.cookie_jar.load('cookies.yml')
     page = ag.get("http://portal.uspto.gov/external/portal/pair")
@@ -110,7 +110,7 @@ class PappsController < ApplicationController
     # Display References = 'pair_displayDownloadReferences'
     # Here, I am going to look at the file history
     form2 = resp2.forms.third
-    form2['selectedTab'] = 'fileHistorytab'
+    form2['selectedTab'] = pairtab
     form2['isSubmitted'] = 'isSubmitted'
     # Get the action string from the page
     actstr = resp2.body.index("document.MainPage.action =  '")
@@ -118,10 +118,31 @@ class PappsController < ApplicationController
     puts "form2 action is: " + resp2.body[(actstr+29)..(actstr+359)]
     form2['dosnum']= appno
     tab = form2.submit
-
-    #aFile = File.new("resp3.html", "w")
-    #aFile.write(tab.body)
-    #aFile.close
+    # Now we want to get the data out of the tab that is returned
+    # - MVP grab the table data and send it to the view
+    case pairtab
+    when 'detailstab'
+      @tabdata = tab.parser.xpath("//table[@id='bibview']").to_html
+    when 'fileHistorytab'
+      @tabdata = tab.parser.xpath("//table[@id='bibcontents']").to_html
+    when 'ifwtab'
+      @tabdata = tab.parser.xpath("//table[@id='ifwinnertable']").to_html
+    when 'continuitytab'
+      @tabdata = tab.parser.xpath("//table[@id='continuityparent']").to_html
+    when 'pubdatestab'
+      # this table doesn't have an id.. but its the first table will cellspacing = 1
+      @tabdata = @tabdata = tab.parser.xpath("//table[@cellspacing='1']")[0].to_html
+    when 'Correspondencetab'
+      @tabdata = @tabdata = tab.parser.xpath("//table[@id='correspondence']").to_html
+    when 'pair_displayDownloadReferences'
+      @tabdata = @tabdata = tab.parser.xpath("//div[@id='ebchelp']").to_html
+    else
+      @tabdata = tab.parser.xpath("//table[@id='bibview']").to_html
+    end
+    
+    aFile = File.new("resp3.html", "w")
+    aFile.write(tab.body)
+    aFile.close
 
     
   end
