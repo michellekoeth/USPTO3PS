@@ -9,3 +9,14 @@ h1
 {
     font-size:500%
 }
+
+p#notice {
+margin-left: auto;
+margin-right: auto;
+text-align: center;
+width: 40%;
+border: 5px solid #ff0000;
+margin-top: 50px;
+padding: 20px;
+font-weight: bold;
+} 

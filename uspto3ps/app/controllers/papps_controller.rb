@@ -112,7 +112,13 @@ class PappsController < ApplicationController
     # Address & Attorney agent = 'Correspondencetab'
     # Display References = 'pair_displayDownloadReferences'
     # Here, I am going to look at the file history
+    
     form2 = resp2.forms.third
+    if form2.nil?
+      # Then the Captcha Did not go through right - give the user a notice and send them back to the getcaptcha page
+      flash[:notice] = "Please enter in a new captcha as shown - the other one was not accepted"
+      redirect_to :back
+    else
     form2['selectedTab'] = pairtab
     form2['isSubmitted'] = 'isSubmitted'
     # Get the action string from the page
@@ -146,7 +152,7 @@ class PappsController < ApplicationController
     aFile = File.new("resp3.html", "w")
     aFile.write(tab.body)
     aFile.close
-
+  end
     
   end
   
