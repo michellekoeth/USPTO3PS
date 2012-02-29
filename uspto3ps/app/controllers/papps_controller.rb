@@ -149,9 +149,9 @@ class PappsController < ApplicationController
       @tabdata = tab.parser.xpath("//table[@id='bibview']").to_html
     end
     
-    aFile = File.new("resp3.html", "w")
-    aFile.write(tab.body)
-    aFile.close
+    #aFile = File.new("resp3.html", "w")
+    #aFile.write(tab.body)
+    #aFile.close
   end
     
   end
