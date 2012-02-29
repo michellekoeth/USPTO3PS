@@ -28,10 +28,11 @@ class PappsController < ApplicationController
     session['tok'] = token
     # Get the recaptcha imageURL
     @recaptcha_imageURL = "http://www.google.com/recaptcha/api/image?c=" + token
-    #@rcimage = ag.get(@recaptcha_imageURL)
+    # new fix since image wont display in production - save locally to server
+    rcimage = ag.get(@recaptcha_imageURL)
+    @rcfn =   token + '.jpg'
+    rcimagefile = rcimage.save('public/assets/'+@rcfn)
     #puts "Class of rcimage: " + @rcimage.filename
-    # You cant serialize a Mechanize object, (coz of live TCP connection) but you can serialize the cookies
-    ag.cookie_jar.save_as('cookies.yml')
     getjss= page.body.partition('function getDossier() {')
     # We also need to save specifically the save form's action which is hidden up in the javascript
     sfactionin = page.body.index("document.save.action =  '/external/portal")
@@ -55,7 +56,7 @@ class PappsController < ApplicationController
     # What data from PAIR to get
     pairtab = params[:data2get]
     ag = Mechanize.new
-    ag.cookie_jar.load('cookies.yml')
+    #ag.cookie_jar.load('cookies.yml')
     page = ag.get("http://portal.uspto.gov/external/portal/pair")
     getjss= page.body.partition('function getDossier() {')
     doscodes = getjss[2].partition('</script>')[0]

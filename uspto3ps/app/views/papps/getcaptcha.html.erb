@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 <h2>Enter the Recaptcha to get USPTO data</h2>
-<iframe src="<%= @recaptcha_imageURL %>"></iframe>
+<%= image_tag(@rcfn) %>
 <%= form_tag("/postcaptchascrape", :method => "get") do %>
 <%= label_tag(:recaptcharesponse, "Enter Response:") %>
   <%= text_field_tag(:recaptcharesponse) %>
