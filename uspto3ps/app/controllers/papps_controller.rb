@@ -30,7 +30,7 @@ class PappsController < ApplicationController
     @recaptcha_imageURL = "http://www.google.com/recaptcha/api/image?c=" + token
     # new fix since image wont display in production - save locally to server
     rcimage = ag.get(@recaptcha_imageURL)
-    @rcfn =   token + '.jpg'
+    @rcfn =   token[(token.length-6)..-1] + '.jpg'
     rcimagefile = rcimage.save('public/assets/'+@rcfn)
     #puts "Class of rcimage: " + @rcimage.filename
     getjss= page.body.partition('function getDossier() {')
