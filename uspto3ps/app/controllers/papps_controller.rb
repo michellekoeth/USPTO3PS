@@ -199,7 +199,7 @@ class PappsController < ApplicationController
           p.save
         end
       end
-      @papps = Papp.all
+      @papps = Papp.find(:all, :conditions => { :pubdate => lthurs})
     respond_to do |format|
       format.html # latestpubapps.html.erb
       #format.json { render json: @papps }

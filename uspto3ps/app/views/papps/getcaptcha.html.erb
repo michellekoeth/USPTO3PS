@@ -1,6 +1,3 @@
-<% if notice %>
-<p id="notice"><%= notice %></p>
-<% end %>
 <h2>Enter the Recaptcha to get USPTO data</h2>
 <%= image_tag(@rcfn) %>
 <%= form_tag("/postcaptchascrape", :method => "get") do %>

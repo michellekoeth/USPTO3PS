@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Uspto3ps</title>
+  <title>PatentBat - Crowdsourced Patent Quality</title>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 <!--[if IE]>
@@ -32,6 +32,9 @@
     </div>
 </header><!-- /#banner -->
 <article>
+  <% if notice %>
+    <p id="notice"><%= notice %></p>
+  <% end %>
 <%= yield %>
 </article>
 <footer>
