@@ -14,9 +14,34 @@ class PappsController < ApplicationController
   def vote_up
     begin
       current_user.vote_for(@papp = Papp.find(params[:id]))
-      render :nothing => true, :status => 200
+      flash[:notice] = "Thanks for Voting!"
+      respond_to do |format|
+        format.html { redirect_to root_path }
+        format.json { head :no_content }
+      end
     rescue ActiveRecord::RecordInvalid
-      render :nothing => true, :status => 404
+      flash[:notice] = "Oh noes! Your vote didn't go through. Please note that you can't vote twice on the same app!"
+      respond_to do |format|
+        format.html { redirect_to root_path }
+        format.json { head :no_content }
+      end
+    end
+  end
+  
+  def vote_down
+    begin
+      current_user.vote_against(@papp = Papp.find(params[:id]))
+      flash[:notice] = "Thanks for Voting!"
+      respond_to do |format|
+        format.html { redirect_to root_path }
+        format.json { head :no_content }
+      end
+    rescue ActiveRecord::RecordInvalid
+      flash[:notice] = "Oh noes! Your vote didn't go through. Please note that you can't vote twice on the same app!"
+      respond_to do |format|
+        format.html { redirect_to root_path }
+        format.json { head :no_content }
+      end
     end
   end
 

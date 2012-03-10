@@ -3,6 +3,7 @@
 <head>
   <title>PatentBat - Crowdsourced Patent Quality</title>
   <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tags %>
 <!--[if IE]>
 	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
@@ -17,7 +18,7 @@
 <header id="banner" class="body">
     <div id="head">
       <div id="menu" style="float:right;margin-right: 125px;">
-	<nav><%= link_to("home", :root) %> | <%= link_to("search", :getcaptcha) %> | <a href="#">login</a> | <a href="#">about</a>
+	<nav><%= link_to("home", :root) %> | <%= link_to("search", :getcaptcha) %> | <% if user_signed_in? %><%= link_to "logout", destroy_user_session_path, :method => :delete %><% else %><%= link_to "login", new_user_session_path %><% end %> | <a href="#">about</a>
 	</nav>
 	<script language="javascript" type="text/javascript" src="http://quickribbon.com/ribbon/2012/02/3acf0216abef66fcb0fff335763a67d4.js"></script><noscript><a href="http://quickribbon.com/">Quickribbon</a></noscript>
     </div>

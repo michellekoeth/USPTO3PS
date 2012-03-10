@@ -7,9 +7,9 @@
     <th><b>App number:</b></th>
     <th><b>Title:</b></th>
     <th><b>Link:</b></th>
-    <% if user_signed_in? %><th><b>Vote!</b></th><% end %>
+    <% if user_signed_in? %><th><b>Your Vote:</b></th><% end %>
   </tr>
-<% @papps.each do | app | %>
+<% @papps.sort_by(&:plusminus).reverse.each do | app | %>
 <tr>
   <td>
     <%= app.plusminus %>
@@ -25,7 +25,17 @@
   </td>
   <% if user_signed_in? %>
     <td>
-      <%= link_to('vote up for this application!', vote_up_papp_path(app), :method => :post) %>
+      <% if current_user.voted_on?(Papp.find(app.id)) %>
+        <% if current_user.voted_for?(Papp.find(app.id)) %>
+          Batter up! Lets take a swing at it!
+        <% else %>
+          Meh, nothing wrong with it.
+        <% end %>
+      <% else %>
+        <%= link_to('Vote: This seems obvious! Lets take a swing at it!', vote_up_papp_path(app), :method => :post) %>
+        <P>
+        <%= link_to('Vote: Meh, seems novel and non-obvious.', vote_down_papp_path(app), :method => :post) %>
+      <% end %>
     </td>
   <% end %>
 </tr>

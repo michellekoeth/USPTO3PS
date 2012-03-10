@@ -6,9 +6,11 @@ class HomeController < ApplicationController
     # Let users vote if they are logged in. If they are not logged in, let them simply see the popularity rankings
     #@toppapps = Papp.plusminus_tally.limit(100).where('created_at > ?', 2.days.ago).having('plusminus > 10')
     toppapps = Papp.plusminus_tally.limit(100).having('vote_count > 0').order('plusminus DESC')
+    tahash = toppapps.size
     size = 0
+    #puts "NUM OF VOTED PAPPS " + tahash.keys.count.to_s
     if toppapps.empty? {size = 0}
-    else size = toppapps.size
+    else size = tahash.keys.count
     end
     if size < 100
       moreapps = Papp.tally.having('vote_count = 0').order('created_at DESC')
