@@ -1,1 +1,33 @@
-<p></p>
+
+
+<h2>Latest Pitches:</h2>
+<table border=1 cellpadding=5>
+  <tr>
+    <th><b>Plusminus Ranking:</b></th>
+    <th><b>App number:</b></th>
+    <th><b>Title:</b></th>
+    <th><b>Link:</b></th>
+    <% if user_signed_in? %><th><b>Vote!</b></th><% end %>
+  </tr>
+<% @papps.each do | app | %>
+<tr>
+  <td>
+    <%= app.plusminus %>
+  </td>
+  <td>
+    <%= link_to app.pubno, papp_path(app.id) %>
+  </td>
+  <td>
+    <%= app.title %>
+  </td>
+  <td>
+    <a href="<%=app.linktoapp%>"><%=app.linktoapp%></a>
+  </td>
+  <% if user_signed_in? %>
+    <td>
+      <%= link_to('vote up for this application!', vote_up_papp_path(app), :method => :post) %>
+    </td>
+  <% end %>
+</tr>
+<% end %>
+</table>

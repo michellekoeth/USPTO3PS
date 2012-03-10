@@ -22,7 +22,14 @@ end
 
 gem 'jquery-rails'
 
+# Data scraping
 gem 'mechanize'
+
+# Voting
+gem 'thumbs_up'
+
+# User authentication
+gem 'devise'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

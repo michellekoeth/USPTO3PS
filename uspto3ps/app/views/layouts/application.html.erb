@@ -11,7 +11,7 @@
 <!--[if lt IE 7]>
 	<link rel="stylesheet" type="text/css" media="all" href="css/ie6.css"/>
 <![endif]-->
-<link href='stylesheets/style.css' rel='stylesheet' type='text/css' />
+<%= stylesheet_link_tag("style") %>
 </head>
 <body>
 <header id="banner" class="body">
@@ -25,7 +25,7 @@
           <h1>PatentBat</h1>
           <h2 style="margin-top: -50px;">Take a swing for patent quality</h2>
       </div>
-          <img src="images/Baseball_bat.svg" style="width: 150px; float: left; margin-top: 60px;"/>
+          <%= image_tag "Baseball_bat.svg", :style=> "width: 150px; float: left; margin-top: 60px;" %>
     </div>
     <div id="tagline" style="clear:both;">
 
@@ -34,6 +34,9 @@
 <article>
   <% if notice %>
     <p id="notice"><%= notice %></p>
+  <% end %>
+  <% if alert %>
+    <p class="alert"><%= alert %></p>
   <% end %>
 <%= yield %>
 </article>

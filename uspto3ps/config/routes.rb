@@ -1,5 +1,13 @@
 Uspto3ps::Application.routes.draw do
-  resources :papps
+  devise_for :users
+  
+  resources :papps do
+      member do
+        post :vote_up
+        post :vote_down
+      end
+    end
+
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
