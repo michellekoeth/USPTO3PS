@@ -15,6 +15,7 @@ Uspto3ps::Application.routes.draw do
   match 'currapps' => 'papps#latestpubapps'
   match 'getcaptcha' => 'papps#getcaptcha'
   match 'postcaptchascrape' => 'papps#postcaptchascrape'
+  match 'about' => "about#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
