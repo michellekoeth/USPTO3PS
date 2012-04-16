@@ -35,7 +35,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 <header id="banner" class="body">
     <div id="head">
       <div id="menu" style="float:right;margin-right: 125px;">
-	<nav><%= link_to("home", :root) %> | <%= link_to("search", :getcaptcha) %> | <% if user_signed_in? %><%= link_to "logout", destroy_user_session_path, :method => :delete %><% else %><%= link_to "login", new_user_session_path %><% end %> | <%= link_to("about", :about) %>
+	<nav><%= link_to("home", :root) %> | <%= link_to("search", :getcaptcha) %> | <%= link_to("latest apps", :currapps) %> | <% if user_signed_in? %><%= link_to "logout", destroy_user_session_path, :method => :delete %><% else %><%= link_to "login", new_user_session_path %><% end %> | <%= link_to("about", :about) %>
 	</nav>
 	<script language="javascript" type="text/javascript" src="http://quickribbon.com/ribbon/2012/02/3acf0216abef66fcb0fff335763a67d4.js"></script><noscript><a href="http://quickribbon.com/">Quickribbon</a></noscript>
     </div>
