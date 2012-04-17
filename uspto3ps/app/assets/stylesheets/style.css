@@ -1,13 +1,32 @@
 body
 {
     background-color:#ccccff;
-    font-family:"Arial Black", Gadget, sans-serif;
+    font-family:"Arial", Gadget, sans-serif;
     font-size: 100%
+}
+
+h1, h2, h3, h4
+{
+    font-family:"Arial Black", Gadget, sans-serif;
 }
 
 h1
 {
     font-size:500%
+}
+
+nav
+{
+    font-family:"Arial Black", Gadget, sans-serif;
+    font-size:150%
+}
+
+p{
+    margin-left: 200px;
+    margin-right: 200px;
+}
+p b {
+    font-family:"Arial Black", Gadget, sans-serif;
 }
 
 p#notice {
